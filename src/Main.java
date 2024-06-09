@@ -1,5 +1,11 @@
+import UserInterface.UserInterface;
+
+import javax.swing.SwingUtilities;
+
 public class Main {
 	public static void main(String[] args) {
-		System.out.println("Hello World!");
+		//Schedule a job for the event-dispatching thread:
+		//creating and showing this application's GUI.
+		javax.swing.SwingUtilities.invokeLater(new UserInterface());
 	}
 }

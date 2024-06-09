@@ -1,4 +1,4 @@
-package components;
+package UserInterface.UIComponents;
 
 import java.awt.*;
 import java.awt.event.*;

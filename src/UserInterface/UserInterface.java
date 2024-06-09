@@ -1,13 +1,18 @@
-import components.MenuLook;
-import components.Slider;
-import components.TextArea;
+package UserInterface;
 
+//Project modules
+import Interfaces.ControlInterface;
+import UserInterface.UIComponents.MenuLook;
+import UserInterface.UIComponents.Slider;
+
+//Java UI libs
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.BorderLayout;
+
+//Java utils
 import java.util.ArrayList;
 
-public class UserInterface {
+public class UserInterface implements ControlInterface, Runnable {
     private static ArrayList<JButton> createButtons(){
         ArrayList<JButton> ButtonList = new ArrayList<JButton>();
 
@@ -46,13 +51,23 @@ public class UserInterface {
         animator.startAnimation();
     }
 
-    public static void main(String[] args) {
-        //Schedule a job for the event-dispatching thread:
-        //creating and showing this application's GUI.
-        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                createAndShowGUI();
-            }
-        });
+    public void run() {
+        createAndShowGUI();
+    }
+
+    public void startSimulaton(){
+
+    }
+    public void suspendSimulation(){
+
+    }
+    public void resumeSimulation(){
+
+    }
+    public void stopSimulation(){
+
+    }
+    public void displayProcessQueues(){
+
     }
 }
