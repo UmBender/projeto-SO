@@ -8,6 +8,7 @@ public class SchedulerSimulator {
 		longTermScheduler.setThreads(ui, shortTermScheduler);
 		shortTermScheduler.setThreads(ui);
 
-		System.out.println("Hello World!");
+		Process process = new Process("/home/bender/USP5/SO/exercicios/projeto_java/teste.txt");
+		shortTermScheduler.addProcess(process);
 	}
 }
