@@ -1,5 +1,2 @@
 #Output java folder
-./src/out
-
-#Ideia config
-./src/.idea
+./out
