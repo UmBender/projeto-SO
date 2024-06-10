@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="bullwinkle.jar">
+  <library name="bullwinkle">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libs/bullwinkle.jar.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/bullwinkle.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
