@@ -1,19 +1,19 @@
 import java.util.Queue;
 
 public class Process {
-    private String id;
+    final private String pid;
     private int remainingTime;
     private int blockTime;
-    private Queue<String> instructions;
+    private final Queue<String> instructions;
+    private int blockPeriod;
 
-    public Process(String id, int remainingTime, Queue<String> instructions) {
-        this.id = id;
+    public Process(String pid, int remainingTime, Queue<String> instructions) {
+        this.pid = pid;
         this.remainingTime = remainingTime;
         this.instructions = instructions;
     }
-
     public String getId() {
-        return id;
+        return pid;
     }
 
     public int getRemainingTime() {
@@ -38,15 +38,27 @@ public class Process {
         }
     }
 
-    public String getNextInstruction() {
-        return instructions.peek();
+    public String getCommand(String instruction){
+        String[] substrings = instruction.split(" ");
+        String command = substrings[0];
+
+        if(substrings.length > 1){
+            this.blockPeriod = Integer.parseInt(substrings[1]);
+        }
+
+        return command;
     }
 
-    public int getNextBlockPeriod() {
+    public int getNextBlockPeriod(){
+        return this.blockPeriod;
+    }
+
+    public String getNextInstruction() {
         String instruction = instructions.poll();
-        if (instruction.startsWith("block")) {
-            return Integer.parseInt(instruction.split(" ")[1]);
-        }
-        return 0;
+        String pid = this.getId();
+
+        assert instruction != null;
+        System.out.printf("PID (%s). %s\n", pid, instruction);
+        return getCommand(instruction);
     }
 }

@@ -2,11 +2,10 @@ import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class ShortTermScheduler implements Runnable {
-
-    private Queue<Process> readyQueue;    // Fila de processos prontos
-    private Queue<Process> blockedQueue;  // Fila de processos bloqueados
-    private Queue<Process> terminatedQueue; // Fila de processos terminados
-    private int quantum; // Quantum de tempo
+    private Queue<Process> readyQueue;
+    private Queue<Process> blockedQueue;
+    private Queue<Process> terminatedQueue;
+    private int quantum;
 
     public ShortTermScheduler(int quantum) {
         this.readyQueue = new ConcurrentLinkedQueue<>();
@@ -27,6 +26,7 @@ public class ShortTermScheduler implements Runnable {
 
     @Override
     public void run() {
+        System.out.println("[ShortTermScheduler] Execution Log:");
         while (true) {
             if (!readyQueue.isEmpty()) {
                 Process currentProcess = readyQueue.poll();
@@ -36,34 +36,46 @@ public class ShortTermScheduler implements Runnable {
             }
             checkBlockedQueue();
             if (readyQueue.isEmpty() && blockedQueue.isEmpty()) {
-                break; // Termina a simulação quando não há mais processos prontos ou bloqueados
+                // Termina a simulação quando não há mais processos prontos ou bloqueados
+                break;
             }
         }
     }
 
-    // Executa um processo
     private void executeProcess(Process process) {
         int remainingTime = process.getRemainingTime();
+
         if (remainingTime > quantum) {
             process.setRemainingTime(remainingTime - quantum);
-            System.out.println("Executing process: " + process.getId());
+
             try {
                 Thread.sleep(quantum);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            if (process.getNextInstruction().equals("block")) {
-                processBlock(process);
-            } else {
-                readyQueue.add(process);
+
+            String command = process.getNextInstruction();
+
+            switch (command) {
+                case "block":
+                    processBlock(process);
+                    break;
+                case "execute":
+                    readyQueue.add(process);
+                    break;
+                case "end":
+                    break;
+                default:
+                    System.err.println("[ShortTermScheduler] Unknown command: " + command);
+                    terminatedQueue.add(process);
             }
+
         } else {
             System.out.println("Process " + process.getId() + " finished execution.");
             terminatedQueue.add(process);
         }
     }
 
-    // Verifica a fila de processos bloqueados e move processos de volta para a fila de prontos se desbloqueados
     private void checkBlockedQueue() {
         Queue<Process> tempQueue = new ConcurrentLinkedQueue<>();
         while (!blockedQueue.isEmpty()) {
@@ -80,9 +92,9 @@ public class ShortTermScheduler implements Runnable {
         blockedQueue.addAll(tempQueue);
     }
 
-    // Bloqueia um processo
     private void processBlock(Process process) {
-        process.setBlockTime(process.getNextBlockPeriod());
+        int blockPeriod = process.getNextBlockPeriod();
+        process.setBlockTime(blockPeriod);
         blockedQueue.add(process);
         System.out.println("Process " + process.getId() + " blocked for " + process.getBlockTime() + " quanta.");
     }

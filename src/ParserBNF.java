@@ -19,6 +19,10 @@ public class ParserBNF {
 
         try {
             Scanner reader = new Scanner(programFile);
+
+            reader.nextLine(); //Program name
+            reader.nextLine(); //Program begin
+
             while (reader.hasNextLine()) {
                 String data = reader.nextLine();
                 instructions.add(data);
@@ -38,7 +42,7 @@ public class ParserBNF {
         System.out.println("[Parser] Read the follow instructions:" );
 
         for (int i = 0; i < n; i++) {
-            String output = String.format("-> [%d] %s",
+            String output = String.format("-> (%d) %s",
                     i, instructionsIterator.next());
             System.out.println(output);
         }
