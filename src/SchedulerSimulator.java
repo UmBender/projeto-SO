@@ -1,49 +1,22 @@
-import UserInterface.UserInterface;
-
-import ca.uqac.lif.bullwinkle.BnfParser;
-import ca.uqac.lif.bullwinkle.ParseNode;
-import ca.uqac.lif.bullwinkle.output.GraphvizVisitor;
-
-import java.io.InputStream;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class SchedulerSimulator {
 	public static void main(String[] args) {
-		//Schedule a job for the event-dispatching thread:
-		//creating and showing this application's GUI.
-		UserInterface ui = new UserInterface();
-		javax.swing.SwingUtilities.invokeLater(ui);
+		int quantum = 200; // Defina o quantum de tempo
+		ShortTermScheduler scheduler = new ShortTermScheduler(quantum);
+		ParserBNF parser = new ParserBNF();
 
-		LongTermScheduler longTermScheduler = new LongTermScheduler();
-		ShortTermScheduler shortTermScheduler = new ShortTermScheduler();
+		ConcurrentLinkedQueue<String> instructions = parser.parse(
+				"C:\\Users\\Tigrocomputer\\Documents\\code-workspace (local)\\SchedulerSimulator\\src\\resources\\teste.txt"
+		);
 
-		ui.setThreads(shortTermScheduler, longTermScheduler);
-		longTermScheduler.setThreads(ui, shortTermScheduler);
-		shortTermScheduler.setThreads(ui);
+		Process p1 = new Process("Process1", 600, instructions);
 
+		scheduler.addProcess(p1);
 
-		Process process = new Process("C:\\Users\\Tigrocomputer\\Documents\\code-workspace (local)\\SchedulerSimulator\\src\\resources\\teste.txt");
-		shortTermScheduler.addProcess(process);
-	}
-	private static void useBullwinkle(){
-		// Load the resource file
-		InputStream inputStream = SchedulerSimulator.class.getResourceAsStream("/Simple-Math.bnf");
-		if (inputStream == null) {
-			System.out.println("Resource not found!");
-			return;
-		}
-
-		try
-		{
-			BnfParser parser = new BnfParser(inputStream);
-			ParseNode node2 = parser.parse("10 + (3 - 4)");
-			GraphvizVisitor visitor = new GraphvizVisitor();
-			node2.prefixAccept(visitor);
-			System.out.println(visitor.toOutputString());
-		}
-		catch (Exception e)
-		{
-			System.err.println("Some error occurred");
-			e.printStackTrace();
-		}
+		Thread schedulerThread = new Thread(scheduler);
+		schedulerThread.start();
 	}
 }
+
+

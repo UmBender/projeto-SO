@@ -13,11 +13,6 @@ public class LongTermScheduler implements Runnable, SubmissionInterface {
 
     }
 
-    public void setThreads(NotificationInterface userInterface, InterSchedulerInterface shortTermScheduler) {
-        this.userInterface = userInterface;
-        this.shortTermScheduler = shortTermScheduler;
-    }
-
     @Override
     public boolean submitJob(String fileName) {
         /*

@@ -5,22 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a72f5e36-787d-4a10-a2e9-8d5ac968a9e3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/SchedulerSimulator.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interfaces/ControlInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserInterface/ControlInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interfaces/InterSchedulerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InterSchedulerInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interfaces/NotificationInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserInterface/NotificationInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interfaces/SubmissionInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserInterface/SubmissionInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ParserBNF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SchedulerSimulator/LongTermScheduler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SchedulerSimulator/LongTermScheduler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SchedulerSimulator/Process.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SchedulerSimulator/SchedulerSimulator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SchedulerSimulator/SchedulerSimulator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SchedulerSimulator/ShortTermScheduler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SchedulerSimulator/ShortTermScheduler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SchedulerSimulator/UserInterface/UserInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SchedulerSimulator/UserInterface/UserInterface.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LongTermScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LongTermScheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Process.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SchedulerSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SchedulerSimulator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ShortTermScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShortTermScheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserInterface/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserInterface/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -72,6 +80,9 @@
       <recent name="C:\Users\Tigrocomputer\Documents\code-workspace (local)\SchedulerSimulator\scripts" />
       <recent name="C:\Users\Tigrocomputer\Documents\code-workspace (local)\SchedulerSimulator\src\Interfaces" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="SchedulerSimulator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -106,7 +117,7 @@
       <workItem from="1718285197772" duration="80000" />
       <workItem from="1718285288628" duration="73000" />
       <workItem from="1718285369757" duration="33000" />
-      <workItem from="1718285404677" duration="449000" />
+      <workItem from="1718285404677" duration="5276000" />
     </task>
     <servers />
   </component>

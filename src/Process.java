@@ -1,64 +1,52 @@
-import java.util.Vector;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.util.Queue;
 
 public class Process {
-    final private int pid;
-    final private String file_name;
-    final private Vector<String> program_statement;
-    private int quantum;
-    private int process_status;
+    private String id;
+    private int remainingTime;
+    private int blockTime;
+    private Queue<String> instructions;
 
-    private void setProgram_statemnt() {
-        File programa_file = new File(file_name);
-        try {
-            Scanner reader = new Scanner(programa_file);
-            while(reader.hasNextLine()) {
-                String data = reader.nextLine();
-                program_statement.add(data);
-            }
-            program_statement.remove(0);
-            program_statement.remove(0);
-            program_statement.remove(program_statement.lastElement());
-            reader.close();
-        }catch(FileNotFoundException e) {
-            System.err.println("O arquivo com este nome não existe: " + file_name);
-            e.printStackTrace();
-        }
-
+    public Process(String id, int remainingTime, Queue<String> instructions) {
+        this.id = id;
+        this.remainingTime = remainingTime;
+        this.instructions = instructions;
     }
 
-    public int getQuantum() {
-        return quantum;
+    public String getId() {
+        return id;
     }
 
-    public void quantumUpgrade() {
-        if(quantum >= 400) {
-            return;
-        }
-        quantum *= 2;
-
+    public int getRemainingTime() {
+        return remainingTime;
     }
 
-    public void quantumDowngrade() {
-        if (quantum <= 25) {
-            return;
-        }
-        quantum /=2;
+    public void setRemainingTime(int remainingTime) {
+        this.remainingTime = remainingTime;
     }
 
-    public Process(String file_name) {
-        pid = 100; //TODO PID Generator
-        process_status = 0; // TODO Status
-        program_statement = new Vector();
-        quantum = 200;
-        this.file_name = file_name;
-        this.setProgram_statemnt();
+    public int getBlockTime() {
+        return blockTime;
+    }
 
-        for(String i: program_statement) {
-            System.out.println(i);
+    public void setBlockTime(int blockTime) {
+        this.blockTime = blockTime;
+    }
+
+    public void decrementBlockTime() {
+        if (blockTime > 0) {
+            blockTime--;
         }
+    }
 
+    public String getNextInstruction() {
+        return instructions.peek();
+    }
+
+    public int getNextBlockPeriod() {
+        String instruction = instructions.poll();
+        if (instruction.startsWith("block")) {
+            return Integer.parseInt(instruction.split(" ")[1]);
+        }
+        return 0;
     }
 }
