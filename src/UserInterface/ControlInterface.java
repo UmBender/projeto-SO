@@ -1,3 +1,5 @@
+package UserInterface;
+
 public interface ControlInterface {
 	public void startSimulation();
 	public void suspendSimulation();

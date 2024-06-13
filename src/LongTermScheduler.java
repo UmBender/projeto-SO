@@ -1,4 +1,6 @@
-import java.util.Queue;
+import UserInterface.NotificationInterface;
+import UserInterface.SubmissionInterface;
+
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class LongTermScheduler implements Runnable, SubmissionInterface {

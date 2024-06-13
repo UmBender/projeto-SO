@@ -10,8 +10,21 @@ public class SchedulerSimulator {
 	public static void main(String[] args) {
 		//Schedule a job for the event-dispatching thread:
 		//creating and showing this application's GUI.
-		javax.swing.SwingUtilities.invokeLater(new UserInterface());
+		UserInterface ui = new UserInterface();
+		javax.swing.SwingUtilities.invokeLater(ui);
 
+		LongTermScheduler longTermScheduler = new LongTermScheduler();
+		ShortTermScheduler shortTermScheduler = new ShortTermScheduler();
+
+		ui.setThreads(shortTermScheduler, longTermScheduler);
+		longTermScheduler.setThreads(ui, shortTermScheduler);
+		shortTermScheduler.setThreads(ui);
+
+
+		Process process = new Process("C:\\Users\\Tigrocomputer\\Documents\\code-workspace (local)\\SchedulerSimulator\\src\\resources\\teste.txt");
+		shortTermScheduler.addProcess(process);
+	}
+	private static void useBullwinkle(){
 		// Load the resource file
 		InputStream inputStream = SchedulerSimulator.class.getResourceAsStream("/Simple-Math.bnf");
 		if (inputStream == null) {

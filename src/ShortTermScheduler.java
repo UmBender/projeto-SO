@@ -1,3 +1,6 @@
+import UserInterface.ControlInterface;
+import UserInterface.NotificationInterface;
+
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class ShortTermScheduler implements Runnable, ControlInterface, InterSchedulerInterface {

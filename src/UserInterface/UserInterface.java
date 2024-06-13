@@ -1,7 +1,8 @@
 package UserInterface;
 
 //Project modules
-import Interfaces.ControlInterface;
+import UserInterface.NotificationInterface;
+import UserInterface.ControlInterface;
 import UserInterface.UIComponents.MenuLook;
 import UserInterface.UIComponents.Slider;
 
@@ -12,7 +13,17 @@ import java.awt.BorderLayout;
 //Java utils
 import java.util.ArrayList;
 
-public class UserInterface implements ControlInterface, Runnable {
+public class UserInterface implements NotificationInterface, ControlInterface, Runnable {
+    public UserInterface(){}
+
+    private SubmissionInterface longTermScheduler;
+    private ControlInterface shortTermScheduler;
+
+    public void setThreads(ControlInterface shortTermScheduler, SubmissionInterface longTermScheduler){
+        this.shortTermScheduler = shortTermScheduler;
+        this.longTermScheduler = longTermScheduler;
+    }
+
     private static ArrayList<JButton> createButtons(){
         ArrayList<JButton> ButtonList = new ArrayList<JButton>();
 
@@ -25,7 +36,7 @@ public class UserInterface implements ControlInterface, Runnable {
         return ButtonList;
     }
 
-    private static void createAndShowGUI() {
+    public void display(String string) {
         //Create and set up the window.
         JFrame frame = new JFrame("UserIntarface GUI");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -52,12 +63,13 @@ public class UserInterface implements ControlInterface, Runnable {
     }
 
     public void run() {
-        createAndShowGUI();
+        display("teste");
     }
 
-    public void startSimulaton(){
+    public void startSimulation(){
 
     }
+
     public void suspendSimulation(){
 
     }
