@@ -6,15 +6,16 @@ import java.util.Scanner;
 
 //Instructions data structure
 import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.Vector;
 
 public class ParserBNF {
-    final private ConcurrentLinkedQueue<String> instructions;
+    final private Vector<String> instructions;
 
     public ParserBNF(){
-        this.instructions = new ConcurrentLinkedQueue<String>();
+        this.instructions = new Vector<String>();
     }
 
-    public ConcurrentLinkedQueue<String> parse(String fileName) {
+    public Vector<String> parse(String fileName) {
         File programFile = new File(fileName);
 
         try {

@@ -1,4 +1,5 @@
 import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.Vector;
 
 public class SchedulerSimulator {
 	public static void main(String[] args) {
@@ -6,8 +7,9 @@ public class SchedulerSimulator {
 		ShortTermScheduler scheduler = new ShortTermScheduler(quantum);
 		ParserBNF parser = new ParserBNF();
 
-		ConcurrentLinkedQueue<String> instructions = parser.parse(
-				"C:\\Users\\Tigrocomputer\\Documents\\code-workspace (local)\\SchedulerSimulator\\src\\resources\\teste.txt"
+		// Só não se esquece de mudar aqui
+		Vector<String> instructions = parser.parse(
+				"/home/bender/USP5/SO/exercicios/projeto-SO/src/resources/teste.txt"
 		);
 
 		Process p1 = new Process("Process1", 600, instructions);

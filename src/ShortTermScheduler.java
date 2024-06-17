@@ -1,10 +1,14 @@
+import UserInterface.ControlInterface;
+import UserInterface.NotificationInterface;
+
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-public class ShortTermScheduler implements Runnable {
+public class ShortTermScheduler implements Runnable, ControlInterface, InterSchedulerInterface {
     private Queue<Process> readyQueue;
     private Queue<Process> blockedQueue;
     private Queue<Process> terminatedQueue;
+    private NotificationInterface userInterface;
     private int quantum;
 
     public ShortTermScheduler(int quantum) {
@@ -12,6 +16,10 @@ public class ShortTermScheduler implements Runnable {
         this.blockedQueue = new ConcurrentLinkedQueue<>();
         this.terminatedQueue = new ConcurrentLinkedQueue<>();
         this.quantum = quantum;
+    }
+
+    public void setThreads(NotificationInterface userInterface){
+        this.userInterface = userInterface;
     }
 
     // Adiciona um processo à fila de prontos
@@ -97,5 +105,40 @@ public class ShortTermScheduler implements Runnable {
         process.setBlockTime(blockPeriod);
         blockedQueue.add(process);
         System.out.println("Process " + process.getId() + " blocked for " + process.getBlockTime() + " quanta.");
+    }
+
+    @Override
+    public void startSimulation() {
+        /*
+        TODO
+         */
+    }
+
+    @Override
+    public void suspendSimulation() {
+        /*
+        TODO
+         */
+    }
+
+    @Override
+    public void resumeSimulation() {
+        /*
+        TODO
+         */
+    }
+
+    @Override
+    public void stopSimulation() {
+        /*
+        TODO
+         */
+    }
+
+    @Override
+    public void displayProcessQueues() {
+        /*
+        TODO
+         */
     }
 }

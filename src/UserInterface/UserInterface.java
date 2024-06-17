@@ -14,8 +14,14 @@ import java.awt.BorderLayout;
 import java.util.ArrayList;
 
 public class UserInterface implements NotificationInterface, ControlInterface, Runnable {
+    private SubmissionInterface longTermScheduler;
+    private ControlInterface shortTermScheduler;
     public UserInterface(){
 
+    }
+    public void setThreads(ControlInterface shortTermScheduler, SubmissionInterface longTermScheduler){
+        this.shortTermScheduler = shortTermScheduler;
+        this.longTermScheduler = longTermScheduler;
     }
 
     private static ArrayList<JButton> createButtons(){

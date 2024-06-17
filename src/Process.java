@@ -1,13 +1,13 @@
-import java.util.Queue;
+import java.util.Vector;
 
 public class Process {
     final private String pid;
     private int remainingTime;
     private int blockTime;
-    private final Queue<String> instructions;
+    private final Vector<String> instructions;
     private int blockPeriod;
 
-    public Process(String pid, int remainingTime, Queue<String> instructions) {
+    public Process(String pid, int remainingTime, Vector<String> instructions) {
         this.pid = pid;
         this.remainingTime = remainingTime;
         this.instructions = instructions;
@@ -54,7 +54,11 @@ public class Process {
     }
 
     public String getNextInstruction() {
+        /*
+        Corrigir pois aqui utilizava queue ao invés de vector
         String instruction = instructions.poll();
+         */
+        String instruction = instructions.get(0);
         String pid = this.getId();
 
         assert instruction != null;
