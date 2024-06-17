@@ -40,7 +40,8 @@ public class LongTermScheduler implements Runnable, SubmissionInterface {
 
         Process p1 = new Process("Process1", 600, instructions);
 
-        shortTermScheduler.addProcess(p1);
+        createdProcessQueue.add(p1);
+        //shortTermScheduler.addProcess(p1);
 
         return true;
     }
@@ -48,9 +49,9 @@ public class LongTermScheduler implements Runnable, SubmissionInterface {
     @Override
     public void displaySubmissionQueue() {
         /*
-        TODO
+        TODO fazer fica bonito na interface
          */
-        userInterface.display(createdProcessQueue.toString());
+        userInterface.display("Created Process Queue:\n"+createdProcessQueue.toString());
 
     }
 
@@ -59,6 +60,21 @@ public class LongTermScheduler implements Runnable, SubmissionInterface {
         /*
         TODO Aqui tem que checkar a carga do ShortTermScheduler para ver se ele ta com muitos processos CPU
         ou se pode mandar mais alguns pois ta com pouca carga ou muito IO bound
+         */
+
+        Process p = createdProcessQueue.poll();
+        if (p != null) {
+            shortTermScheduler.addProcess(p);
+        }
+
+        /*
+        if(shortTermScheduler.getProcessLoad() < 3) {
+            Process passProcess = createdProcessQueue.poll();
+            if(passProcess != null) {
+                shortTermScheduler.addProcess(passProcess);
+            }
+        }
+
          */
     }
 }
