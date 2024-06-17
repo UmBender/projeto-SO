@@ -38,6 +38,7 @@ public class UserInterface implements NotificationInterface, ControlInterface, R
 
     public void display(String string) {
         //Create and set up the window.
+        /*
         JFrame frame = new JFrame("UserIntarface GUI");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -60,6 +61,8 @@ public class UserInterface implements NotificationInterface, ControlInterface, R
         frame.pack();
         frame.setVisible(true);
         animator.startAnimation();
+         */
+        System.out.println(string);
     }
 
     public void run() {

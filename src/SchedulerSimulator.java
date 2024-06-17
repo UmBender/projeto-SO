@@ -1,23 +1,42 @@
-import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.Vector;
+import UserInterface.UserInterface;
 
 public class SchedulerSimulator {
 	public static void main(String[] args) {
 		int quantum = 200; // Defina o quantum de tempo
-		ShortTermScheduler scheduler = new ShortTermScheduler(quantum);
-		ParserBNF parser = new ParserBNF();
 
-		// Só não se esquece de mudar aqui
-		Vector<String> instructions = parser.parse(
-				"/home/bender/USP5/SO/exercicios/projeto-SO/src/resources/teste.txt"
-		);
+		// Estancia as classes das threads
+		ShortTermScheduler shortTermScheduler = new ShortTermScheduler(quantum);
+		LongTermScheduler longTermScheduler = new LongTermScheduler();
+		UserInterface userInterface = new UserInterface();
 
-		Process p1 = new Process("Process1", 600, instructions);
+		// Passa as interfaces para as outros objetos
+		shortTermScheduler.setThreads(userInterface);
+		longTermScheduler.setThreads(userInterface,shortTermScheduler);
+		userInterface.setThreads(shortTermScheduler, longTermScheduler);
 
-		scheduler.addProcess(p1);
+		// Criar as threads
+		Thread shortTermSchedulerThread = new Thread(shortTermScheduler);
+		Thread longTermSchedulerThread = new Thread(longTermScheduler);
+		Thread userInterfaceThread = new Thread(userInterface);
 
-		Thread schedulerThread = new Thread(scheduler);
-		schedulerThread.start();
+		longTermScheduler.submitJob("/home/bender/USP5/SO/exercicios/projeto-SO/src/resources/teste.txt");
+
+		// Inicia as threads
+		shortTermSchedulerThread.start();
+		longTermSchedulerThread.start();
+		userInterfaceThread.start();
+
+		try {
+			shortTermScheduler.displayProcessQueues();
+			shortTermSchedulerThread.join();
+			longTermSchedulerThread.join();
+			userInterfaceThread.join();
+		} catch (InterruptedException ie){
+			System.err.println(ie.getMessage());
+
+		}
+
+		System.out.println("Acabou");
 	}
 }
 

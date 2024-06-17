@@ -6,11 +6,13 @@ public class Process {
     private int blockTime;
     private final Vector<String> instructions;
     private int blockPeriod;
+    private int instruction_number;
 
     public Process(String pid, int remainingTime, Vector<String> instructions) {
         this.pid = pid;
         this.remainingTime = remainingTime;
         this.instructions = instructions;
+        this.instruction_number = 0;
     }
     public String getId() {
         return pid;
@@ -56,13 +58,20 @@ public class Process {
     public String getNextInstruction() {
         /*
         Corrigir pois aqui utilizava queue ao invés de vector
-        String instruction = instructions.poll();
+        String instruction_number = instructions.poll();
          */
-        String instruction = instructions.get(0);
+        String instruction = instructions.get(instruction_number);
+        instruction_number++;
         String pid = this.getId();
 
         assert instruction != null;
         System.out.printf("PID (%s). %s\n", pid, instruction);
         return getCommand(instruction);
+    }
+
+    @Override
+    public String toString(){
+        return "\nPid: " +pid + "\nRemainingTime: " + remainingTime + "\nBlockTime: " + blockTime + "\n";
+
     }
 }

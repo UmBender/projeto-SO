@@ -137,8 +137,11 @@ public class ShortTermScheduler implements Runnable, ControlInterface, InterSche
 
     @Override
     public void displayProcessQueues() {
+        userInterface.display(readyQueue.toString());
+        userInterface.display(blockedQueue.toString());
+        userInterface.display(terminatedQueue.toString());
         /*
-        TODO
+        TODO Fazer com formatação bonitinha;
          */
     }
 }
