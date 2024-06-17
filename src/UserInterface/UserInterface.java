@@ -13,7 +13,7 @@ import java.awt.BorderLayout;
 //Java utils
 import java.util.ArrayList;
 
-public class UserInterface implements NotificationInterface, ControlInterface, Runnable {
+public class UserInterface implements NotificationInterface, Runnable {
     private SubmissionInterface longTermScheduler;
     private ControlInterface shortTermScheduler;
     public UserInterface(){
@@ -67,22 +67,5 @@ public class UserInterface implements NotificationInterface, ControlInterface, R
 
     public void run() {
         display("teste");
-    }
-
-    public void startSimulation(){
-
-    }
-
-    public void suspendSimulation(){
-
-    }
-    public void resumeSimulation(){
-
-    }
-    public void stopSimulation(){
-
-    }
-    public void displayProcessQueues(){
-
     }
 }
