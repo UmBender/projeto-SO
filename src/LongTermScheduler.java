@@ -18,30 +18,27 @@ public class LongTermScheduler implements Runnable, SubmissionInterface {
     public void setThreads(NotificationInterface userInterface, InterSchedulerInterface shortTermScheduler) {
         this.userInterface = userInterface;
         this.shortTermScheduler = shortTermScheduler;
+
+        userInterface.display("[LongTerm Scheduler] Pronto.");
     }
 
     @Override
     public boolean submitJob(String fileName) {
-        ParserBNF parser = new ParserBNF();
+        ParserBNF parser = new ParserBNF(userInterface);
 
-        // Só não se esquece de mudar aqui
         Vector<String> instructions;
         try {
             instructions = parser.parse(
                     fileName
             );
-        }catch (FileNotFoundException | ParseException e) {
-            /*
-            TODO Mudar para utilizar o objeto Notification
-             */
+        } catch (FileNotFoundException | ParseException e) {
             userInterface.display(e.getMessage());
             return false;
         }
 
-        Process p1 = new Process("Process1", 600, instructions);
+        Process p1 = new Process("Process1", 600, instructions, userInterface);
 
         createdProcessQueue.add(p1);
-        //shortTermScheduler.addProcess(p1);
 
         return true;
     }
@@ -51,7 +48,7 @@ public class LongTermScheduler implements Runnable, SubmissionInterface {
         /*
         TODO fazer fica bonito na interface
          */
-        userInterface.display("Created Process Queue:\n"+createdProcessQueue.toString());
+        userInterface.display("[LongTermScheduler] Created Process Queue:\n"+ createdProcessQueue.toString());
 
     }
 
@@ -66,15 +63,5 @@ public class LongTermScheduler implements Runnable, SubmissionInterface {
         if (p != null) {
             shortTermScheduler.addProcess(p);
         }
-
-        /*
-        if(shortTermScheduler.getProcessLoad() < 3) {
-            Process passProcess = createdProcessQueue.poll();
-            if(passProcess != null) {
-                shortTermScheduler.addProcess(passProcess);
-            }
-        }
-
-         */
     }
 }

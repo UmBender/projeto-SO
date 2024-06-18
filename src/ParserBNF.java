@@ -1,4 +1,7 @@
 //IO Modules
+import UserInterface.NotificationInterface;
+import UserInterface.UserInterface;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.text.ParseException;
@@ -11,10 +14,11 @@ import java.util.Vector;
 
 public class ParserBNF {
     final private Vector<String> instructions;
+    NotificationInterface userInterface;
 
-
-    public ParserBNF(){
+    public ParserBNF(NotificationInterface userInterface){
         this.instructions = new Vector<String>();
+        this.userInterface = userInterface;
     }
 
     public Vector<String> parse(String fileName) throws FileNotFoundException, ParseException {
@@ -45,7 +49,7 @@ public class ParserBNF {
             reader.close();
             this.print();
         } catch (FileNotFoundException e) {
-            System.err.println("[Error] Arquivo não encontrado: " + fileName);
+            userInterface.display("[Error] Arquivo não encontrado: " + fileName);
             throw new FileNotFoundException("[Error] Arquivo não encontrado: " + fileName);
         }
 
@@ -60,12 +64,12 @@ public class ParserBNF {
         int n = instructions.size();
         Iterator<String> instructionsIterator = instructions.iterator();
 
-        System.out.println("[Parser] Read the follow instructions:" );
+        userInterface.display("[Parser] Lendo as seguintes instruções:" );
 
         for (int i = 0; i < n; i++) {
             String output = String.format("-> (%d) %s",
                     i, instructionsIterator.next());
-            System.out.println(output);
+            userInterface.display(output);
         }
     }
 

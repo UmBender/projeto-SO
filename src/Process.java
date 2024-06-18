@@ -1,3 +1,5 @@
+import UserInterface.NotificationInterface;
+
 import java.util.Vector;
 
 public class Process {
@@ -7,12 +9,14 @@ public class Process {
     private final Vector<String> instructions;
     private int blockPeriod;
     private int instruction_number;
+    private NotificationInterface userInterface;
 
-    public Process(String pid, int remainingTime, Vector<String> instructions) {
+    public Process(String pid, int remainingTime, Vector<String> instructions, NotificationInterface userInterface) {
         this.pid = pid;
         this.remainingTime = remainingTime;
         this.instructions = instructions;
         this.instruction_number = 0;
+        this.userInterface = userInterface;
     }
     public String getId() {
         return pid;
@@ -56,16 +60,12 @@ public class Process {
     }
 
     public String getNextInstruction() {
-        /*
-        Corrigir pois aqui utilizava queue ao invés de vector
-        String instruction_number = instructions.poll();
-         */
         String instruction = instructions.get(instruction_number);
         instruction_number++;
         String pid = this.getId();
 
         assert instruction != null;
-        System.out.printf("PID (%s). %s\n", pid, instruction);
+        userInterface.display(String.format("PID (%s). %s\n", pid, instruction));
         return getCommand(instruction);
     }
 

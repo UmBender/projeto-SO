@@ -1,71 +1,53 @@
 package UserInterface;
 
-//Project modules
-import UserInterface.NotificationInterface;
-import UserInterface.ControlInterface;
-import UserInterface.UIComponents.MenuLook;
-import UserInterface.UIComponents.Slider;
-
-//Java UI libs
+//UI Modules
 import javax.swing.*;
-import java.awt.BorderLayout;
+import UserInterface.UIComponents.TextArea;
+import UserInterface.UIComponents.Buttons;
 
 //Java utils
-import java.util.ArrayList;
+import java.awt.*;
 
 public class UserInterface implements NotificationInterface, Runnable {
     private SubmissionInterface longTermScheduler;
     private ControlInterface shortTermScheduler;
-    public UserInterface(){
+    private TextArea textArea;
 
+    public UserInterface(){
+        this.textArea = new TextArea();
     }
+
     public void setThreads(ControlInterface shortTermScheduler, SubmissionInterface longTermScheduler){
         this.shortTermScheduler = shortTermScheduler;
         this.longTermScheduler = longTermScheduler;
     }
 
-    private static ArrayList<JButton> createButtons(){
-        ArrayList<JButton> ButtonList = new ArrayList<JButton>();
-
-        JButton b2 = new JButton("Middle button");
-        b2.setVerticalTextPosition(AbstractButton.BOTTOM);
-        b2.setHorizontalTextPosition(AbstractButton.CENTER);
-
-        ButtonList.add(b2);
-
-        return ButtonList;
-    }
-
-    public void display(String string) {
-        //Create and set up the window.
-        /*
+    public void createAndShowGUI() {
         JFrame frame = new JFrame("UserIntarface GUI");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        Slider animator = new Slider();
+        // Criação de uma instância de TextArea
+        TextArea textAreaPanel = textArea;
+        frame.getContentPane().add(textAreaPanel, BorderLayout.CENTER);
 
-        //Add the ubiquitous "Hello World" label.
-        JLabel label = new JLabel("Hello World");
-        frame.getContentPane().add(label);
+        // Adicionando botões (ou outros componentes) abaixo do TextArea
+        JPanel buttonPanel = new Buttons(longTermScheduler);
+        frame.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
 
-        frame.setJMenuBar(new MenuLook().createMenuBar());
-
-        ArrayList<JButton> ButtonList =  createButtons();
-        for (JButton jButton : ButtonList) {
-           frame.add(jButton);
-        }
-        frame.add(animator, BorderLayout.CENTER);
-        //frame.add(new TextArea());
-
-        //Display the window.
+        // Criando a visualização GUI
         frame.pack();
         frame.setVisible(true);
-        animator.startAnimation();
-         */
-        System.out.println(string);
+
     }
 
-    public void run() {
-        display("teste");
+    public void run(){
+        SwingUtilities.invokeLater(() -> {
+            createAndShowGUI();
+        });
+    }
+
+    @Override
+    public void display(String info) {
+        this.textArea.append(info);
     }
 }

@@ -34,7 +34,7 @@ public class ShortTermScheduler implements Runnable, ControlInterface, InterSche
 
     @Override
     public void run() {
-        System.out.println("[ShortTermScheduler] Execution Log:");
+        userInterface.display("[ShortTermScheduler] Pronto.");
         while (true) {
             if (!readyQueue.isEmpty()) {
                 Process currentProcess = readyQueue.poll();
@@ -74,12 +74,12 @@ public class ShortTermScheduler implements Runnable, ControlInterface, InterSche
                 case "end":
                     break;
                 default:
-                    System.err.println("[ShortTermScheduler] Unknown command: " + command);
+                    userInterface.display("[ShortTermScheduler] Comando desconhecido: " + command);
                     terminatedQueue.add(process);
             }
 
         } else {
-            System.out.println("Process " + process.getId() + " finished execution.");
+            userInterface.display("[ShortTermScheduler] Process " + process.getId() + " finished execution.");
             terminatedQueue.add(process);
         }
     }
@@ -104,7 +104,7 @@ public class ShortTermScheduler implements Runnable, ControlInterface, InterSche
         int blockPeriod = process.getNextBlockPeriod();
         process.setBlockTime(blockPeriod);
         blockedQueue.add(process);
-        System.out.println("Process " + process.getId() + " blocked for " + process.getBlockTime() + " quanta.");
+        userInterface.display("[ShortTermScheduler] Process " + process.getId() + " blocked for " + process.getBlockTime() + " quanta.");
     }
 
     @Override

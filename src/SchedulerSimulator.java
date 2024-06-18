@@ -4,14 +4,14 @@ public class SchedulerSimulator {
 	public static void main(String[] args) {
 		int quantum = 200; // Defina o quantum de tempo
 
-		// Estancia as classes das threads
+		// Instancia as classes das threads
 		ShortTermScheduler shortTermScheduler = new ShortTermScheduler(quantum);
 		LongTermScheduler longTermScheduler = new LongTermScheduler();
 		UserInterface userInterface = new UserInterface();
 
 		// Passa as interfaces para as outros objetos
 		shortTermScheduler.setThreads(userInterface);
-		longTermScheduler.setThreads(userInterface,shortTermScheduler);
+		longTermScheduler.setThreads(userInterface, shortTermScheduler);
 		userInterface.setThreads(shortTermScheduler, longTermScheduler);
 
 		// Criar as threads
@@ -19,12 +19,10 @@ public class SchedulerSimulator {
 		Thread longTermSchedulerThread = new Thread(longTermScheduler);
 		Thread userInterfaceThread = new Thread(userInterface);
 
-		longTermScheduler.submitJob("/home/bender/USP5/SO/exercicios/projeto-SO/src/resources/teste.txt");
-
 		// Inicia as threads
+		userInterfaceThread.start();
 		shortTermSchedulerThread.start();
 		longTermSchedulerThread.start();
-		userInterfaceThread.start();
 
 		try {
 			shortTermScheduler.displayProcessQueues();
@@ -32,11 +30,10 @@ public class SchedulerSimulator {
 			longTermSchedulerThread.join();
 			userInterfaceThread.join();
 		} catch (InterruptedException ie){
-			System.err.println(ie.getMessage());
+			userInterface.display(ie.getMessage());
 
 		}
 
-		System.out.println("Acabou");
 	}
 }
 
