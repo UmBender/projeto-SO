@@ -31,9 +31,7 @@ public class SchedulerSimulator {
 			userInterfaceThread.join();
 		} catch (InterruptedException ie){
 			userInterface.display(ie.getMessage());
-
 		}
-
 	}
 }
 

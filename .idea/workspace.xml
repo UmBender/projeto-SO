@@ -5,24 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a72f5e36-787d-4a10-a2e9-8d5ac968a9e3" name="Changes" comment="feat: Alteracoes no ParserBNF, usar vector, Process. Adicao do dos campos no long, short e Userinterface para comounicação.">
-      <change afterPath="$PROJECT_DIR$/src/UserInterface/UIComponents/Buttons.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SchedulerSimulator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SchedulerSimulator.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/bullwinkle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UserInterface/UIComponents/SubmissionPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LongTermScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LongTermScheduler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ParserBNF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ParserBNF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Process.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SchedulerSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SchedulerSimulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShortTermScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShortTermScheduler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserInterface/UIComponents/MenuLook.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserInterface/UIComponents/Slider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserInterface/UIComponents/TextArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserInterface/UIComponents/TextArea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserInterface/UIComponents/images/doggy/T0.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserInterface/UIComponents/images/doggy/T1.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserInterface/UIComponents/images/doggy/T2.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserInterface/UIComponents/images/doggy/T3.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserInterface/UIComponents/images/doggy/T4.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserInterface/UIComponents/Buttons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserInterface/UIComponents/ControlPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UserInterface/UIComponents/TextArea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserInterface/UIComponents/TextAreaPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UserInterface/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserInterface/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -160,7 +148,7 @@
       <workItem from="1718645113654" duration="10585000" />
       <workItem from="1718660691011" duration="58000" />
       <workItem from="1718660752359" duration="1002000" />
-      <workItem from="1718661767837" duration="9060000" />
+      <workItem from="1718661767837" duration="12974000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Alteracoes no ParserBNF, usar vector, Process. Adicao do dos campos no long, short e Userinterface para comounicação.">
       <option name="closed" value="true" />

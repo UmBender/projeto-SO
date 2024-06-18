@@ -3,11 +3,11 @@ package UserInterface.UIComponents;
 import javax.swing.*;
 import java.awt.*;
 
-public class TextArea extends JPanel {
+public class TextAreaPanel extends JPanel {
     private JTextArea textArea;
     private static final String newline = "\n";
 
-    public TextArea() {
+    public TextAreaPanel() {
         super(new GridBagLayout());
 
         textArea = new JTextArea(5, 20);
