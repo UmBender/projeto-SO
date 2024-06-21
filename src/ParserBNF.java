@@ -57,6 +57,7 @@ public class ParserBNF {
         !validateName(realFileName, program_name) || !validateProgram()){
             throw new ParseException("[Error] Arquivo não segue padrão de formação",0);
         }
+        instructions.add(program_end);
         return instructions;
     }
 

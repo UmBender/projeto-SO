@@ -6,7 +6,7 @@ public class SchedulerSimulator {
 
 		// Instancia as classes das threads
 		ShortTermScheduler shortTermScheduler = new ShortTermScheduler(quantum);
-		LongTermScheduler longTermScheduler = new LongTermScheduler();
+		LongTermScheduler longTermScheduler = new LongTermScheduler(quantum);
 		UserInterface userInterface = new UserInterface();
 
 		// Passa as interfaces para as outros objetos

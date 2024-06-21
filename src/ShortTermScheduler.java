@@ -9,6 +9,7 @@ public class ShortTermScheduler implements Runnable, ControlInterface, InterSche
     private Queue<Process> blockedQueue;
     private Queue<Process> terminatedQueue;
     private NotificationInterface userInterface;
+    private boolean suspended = false;
     private int quantum;
 
     public ShortTermScheduler(int quantum) {
@@ -16,6 +17,7 @@ public class ShortTermScheduler implements Runnable, ControlInterface, InterSche
         this.blockedQueue = new ConcurrentLinkedQueue<>();
         this.terminatedQueue = new ConcurrentLinkedQueue<>();
         this.quantum = quantum;
+        this.suspended = false;
     }
 
     public void setThreads(NotificationInterface userInterface){
@@ -36,16 +38,29 @@ public class ShortTermScheduler implements Runnable, ControlInterface, InterSche
     public void run() {
         userInterface.display("[ShortTermScheduler] Pronto.");
         while (true) {
-            if (!readyQueue.isEmpty()) {
-                Process currentProcess = readyQueue.poll();
-                if (currentProcess != null) {
-                    executeProcess(currentProcess);
+            if(!suspended) {
+                if (!readyQueue.isEmpty()) {
+                    Process currentProcess = readyQueue.poll();
+                    if (currentProcess != null) {
+                        executeProcess(currentProcess);
+                    }
+                }
+                checkBlockedQueue();
+            } else {
+                try {
+                    Thread.sleep(1000);
+                }catch (InterruptedException ie) {
+                    System.err.println("[ShortTermScheduler] Interrompido.");
                 }
             }
-            checkBlockedQueue();
             if (readyQueue.isEmpty() && blockedQueue.isEmpty()) {
                 // Termina a simulação quando não há mais processos prontos ou bloqueados
-                break;
+                userInterface.display("[ShortTermScheduler] Vazio.");
+                try {
+                    Thread.sleep(1000);
+                }catch (InterruptedException ie) {
+                    System.err.println("[ShortTermScheduler] Interrompido.");
+                }
             }
         }
     }
@@ -53,36 +68,44 @@ public class ShortTermScheduler implements Runnable, ControlInterface, InterSche
     private void executeProcess(Process process) {
         int remainingTime = process.getRemainingTime();
 
-        if (remainingTime > quantum) {
-            process.setRemainingTime(remainingTime - quantum);
+        while(remainingTime > 0){
+            while(suspended) {
+                try {
+                    Thread.sleep(300);
+                }catch (InterruptedException e){
+                    System.err.println("[ShortTermScheduler] Interrupted while waiting for process to finish.");
+                }
+            }
+            process.setRemainingTime(remainingTime-1);
 
             try {
-                Thread.sleep(quantum);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+                Thread.sleep(1000);
+            }catch (InterruptedException e){
+                System.err.println("[ShortTermScheduler] Interrupted while waiting for process to finish.");
             }
 
             String command = process.getNextInstruction();
-
+            userInterface.display("Processo: " + process.getId() + " executa comando:" +command);
             switch (command) {
                 case "block":
+                    process.downgradeNumberQuantum();
                     processBlock(process);
-                    break;
+                    process.resetRemaningTime();
+                    return;
                 case "execute":
-                    readyQueue.add(process);
-                    break;
-                case "end":
                     break;
                 default:
-                    userInterface.display("[ShortTermScheduler] Comando desconhecido: " + command);
                     terminatedQueue.add(process);
+                    return;
             }
 
-        } else {
-            userInterface.display("[ShortTermScheduler] Process " + process.getId() + " finished execution.");
-            terminatedQueue.add(process);
+            remainingTime = process.getRemainingTime();
         }
+        process.upgradeNumberQuantum();
+        process.resetRemaningTime();
+        readyQueue.add(process);
     }
+
 
     private void checkBlockedQueue() {
         Queue<Process> tempQueue = new ConcurrentLinkedQueue<>();
@@ -109,6 +132,7 @@ public class ShortTermScheduler implements Runnable, ControlInterface, InterSche
 
     @Override
     public void startSimulation() {
+        suspended = false;
         /*
         TODO
          */
@@ -116,6 +140,7 @@ public class ShortTermScheduler implements Runnable, ControlInterface, InterSche
 
     @Override
     public void suspendSimulation() {
+        suspended = true;
         /*
         TODO
          */
@@ -123,6 +148,7 @@ public class ShortTermScheduler implements Runnable, ControlInterface, InterSche
 
     @Override
     public void resumeSimulation() {
+        suspended = false;
         /*
         TODO
          */
@@ -130,6 +156,7 @@ public class ShortTermScheduler implements Runnable, ControlInterface, InterSche
 
     @Override
     public void stopSimulation() {
+        suspended = true;
         /*
         TODO
          */

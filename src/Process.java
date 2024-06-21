@@ -1,9 +1,12 @@
 import UserInterface.NotificationInterface;
 
 import java.util.Vector;
+import java.util.Random;
 
 public class Process {
     final private String pid;
+    final private int quantum;
+    private int number_quantum;
     private int remainingTime;
     private int blockTime;
     private final Vector<String> instructions;
@@ -11,12 +14,19 @@ public class Process {
     private int instruction_number;
     private NotificationInterface userInterface;
 
-    public Process(String pid, int remainingTime, Vector<String> instructions, NotificationInterface userInterface) {
-        this.pid = pid;
-        this.remainingTime = remainingTime;
+    public Process(String pid, int quantum, Vector<String> instructions, NotificationInterface userInterface) {
+        this.quantum = quantum;
+        this.number_quantum = 4;
+        this.remainingTime = this.number_quantum * this.quantum;
         this.instructions = instructions;
         this.instruction_number = 0;
         this.userInterface = userInterface;
+
+
+        Random rand = new Random();
+        rand.setSeed(System.currentTimeMillis());
+        rand.nextInt(1024);
+        this.pid = pid + "_" + Integer.toHexString(rand.nextInt());
     }
     public String getId() {
         return pid;
@@ -73,5 +83,20 @@ public class Process {
     public String toString(){
         return "\nPid: " +pid + "\nRemainingTime: " + remainingTime + "\nBlockTime: " + blockTime + "\n";
 
+    }
+
+    public void resetRemaningTime() {
+        this.remainingTime = this.number_quantum * this.quantum;;
+    }
+
+    public void upgradeNumberQuantum() {
+        if(number_quantum < 8) {
+            this.number_quantum++;
+        }
+    }
+    public void downgradeNumberQuantum() {
+        if(number_quantum > 1) {
+            number_quantum--;
+        }
     }
 }

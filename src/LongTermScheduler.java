@@ -10,9 +10,11 @@ public class LongTermScheduler implements Runnable, SubmissionInterface {
     private NotificationInterface userInterface;
     private InterSchedulerInterface shortTermScheduler;
     private ConcurrentLinkedQueue<Process> createdProcessQueue;
+    final private int quantum;
 
-    public LongTermScheduler() {
+    public LongTermScheduler(int quantum) {
         createdProcessQueue = new ConcurrentLinkedQueue<Process>();
+        this.quantum = quantum;
     }
 
     public void setThreads(NotificationInterface userInterface, InterSchedulerInterface shortTermScheduler) {
@@ -36,7 +38,7 @@ public class LongTermScheduler implements Runnable, SubmissionInterface {
             return false;
         }
 
-        Process p1 = new Process("Process1", 600, instructions, userInterface);
+        Process p1 = new Process(fileName, this.quantum, instructions, userInterface);
 
         createdProcessQueue.add(p1);
 
@@ -58,10 +60,26 @@ public class LongTermScheduler implements Runnable, SubmissionInterface {
         TODO Aqui tem que checkar a carga do ShortTermScheduler para ver se ele ta com muitos processos CPU
         ou se pode mandar mais alguns pois ta com pouca carga ou muito IO bound
          */
+        while(true) {
+            if(shortTermScheduler.getProcessLoad() < 10) {
+                Process p = createdProcessQueue.poll();
+                if (p != null) {
+                    shortTermScheduler.addProcess(p);
+                }else {
+                    try {
+                        Thread.sleep(300);
+                    }catch (InterruptedException ie){
+                        System.out.println(ie.getMessage());
+                    }
+                }
+            }else {
+                try {
+                    Thread.sleep(300);
+                }catch (InterruptedException ie){
+                    System.out.println(ie.getMessage());
+                }
+            }
 
-        Process p = createdProcessQueue.poll();
-        if (p != null) {
-            shortTermScheduler.addProcess(p);
         }
     }
 }
