@@ -1,4 +1,4 @@
-//IO Modules
+package Parser;//IO Modules
 import UserInterface.NotificationInterface;
 
 import java.io.File;
@@ -9,7 +9,6 @@ import java.util.Objects;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Supplier;
 
 //Instructions data structure
 import java.util.Vector;
@@ -17,6 +16,10 @@ import java.util.Vector;
 public class ParserBNF {
     final private Vector<String> instructions;
     NotificationInterface userInterface;
+    String program_name;
+    String program_begin;
+    String program_end;
+    String realFileName;
 
     public ParserBNF(NotificationInterface userInterface){
         this.instructions = new Vector<String>();
@@ -25,26 +28,8 @@ public class ParserBNF {
 
     public Vector<String> parse(String fileName) throws FileNotFoundException, ParseException {
         File programFile = new File(fileName);
-        String program_name;
-        String program_begin;
-        String program_end;
-        String realFileName;
 
-        // Detecção do sistema operacional
-        String os = System.getProperty("os.name").toLowerCase();
-        if (os.contains("win")){
-            realFileName = "";
-        }
-        else if (os.contains("osx")){
-            realFileName = "";
-        }
-        else if (os.contains("nix") || os.contains("aix") || os.contains("nux")){
-            String[] splited_path = fileName.split("/");
-            realFileName = splited_path[splited_path.length - 1];
-        } else {
-            realFileName = "";
-        }
-
+        this.detectOS(fileName);
 
         try {
             Scanner reader = new Scanner(programFile);
@@ -93,6 +78,26 @@ public class ParserBNF {
                     i, instructionsIterator.next());
             userInterface.display(output);
         }
+    }
+
+    private void detectOS(String fileName){
+        // Detecção do sistema operacional
+        String os = System.getProperty("os.name").toLowerCase();
+        userInterface.display("<is> [Parser] Detecção de OS: " + os);
+
+        if (os.contains("win")) {
+            String[] splitedPath = fileName.split("\\\\");
+            realFileName = splitedPath[splitedPath.length - 1];
+        } else if (os.contains("osx")) {
+            realFileName = "";
+        } else if (os.contains("nix") || os.contains("aix") || os.contains("nux")) {
+            String[] splitedPath = fileName.split("/");
+            realFileName = splitedPath[splitedPath.length - 1];
+        } else {
+            realFileName = "";
+            userInterface.display("<is> [Parser Error] Sistema operacional não suportado: " + os);
+        }
+
     }
 
     private boolean validateName(String fileName, String name){

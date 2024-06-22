@@ -1,3 +1,5 @@
+package Parser;
+
 import java.util.function.Supplier;
 
 class NamedValidation {
