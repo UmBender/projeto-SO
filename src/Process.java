@@ -75,7 +75,7 @@ public class Process {
         String pid = this.getId();
 
         assert instruction != null;
-        userInterface.display(String.format("<is> PID (%s). %s\n", pid, instruction));
+        userInterface.display(String.format("<is> [Process (%s)] %s", pid, instruction));
         return getCommand(instruction);
     }
 

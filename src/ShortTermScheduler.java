@@ -49,16 +49,15 @@ public class ShortTermScheduler implements Runnable, ControlInterface, InterSche
             } else {
                 try {
                     Thread.sleep(1000);
-                }catch (InterruptedException ie) {
+                } catch (InterruptedException ie) {
                     System.err.println("<ss> [ShortTermScheduler] Interrompido.");
                 }
             }
             if (readyQueue.isEmpty() && blockedQueue.isEmpty()) {
                 // Termina a simulação quando não há mais processos prontos ou bloqueados
-                userInterface.display("<ss> [ShortTermScheduler] Vazio.");
                 try {
                     Thread.sleep(1000);
-                }catch (InterruptedException ie) {
+                } catch (InterruptedException ie) {
                     System.err.println("<ss> [ShortTermScheduler] Interrompido.");
                 }
             }
@@ -85,7 +84,7 @@ public class ShortTermScheduler implements Runnable, ControlInterface, InterSche
             }
 
             String command = process.getNextInstruction();
-            userInterface.display("Processo: " + process.getId() + " executa comando:" +command);
+            userInterface.display("<ss> Processo: " + process.getId() + " executa comando:" +command);
             switch (command) {
                 case "block":
                     process.downgradeNumberQuantum();

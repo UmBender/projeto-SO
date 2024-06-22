@@ -22,7 +22,7 @@ public class LongTermScheduler implements Runnable, SubmissionInterface {
         this.userInterface = userInterface;
         this.shortTermScheduler = shortTermScheduler;
 
-        userInterface.display("[LongTerm Scheduler] Pronto.");
+        userInterface.display("<ls> [LongTerm Scheduler] Pronto.");
     }
 
     @Override
@@ -51,7 +51,7 @@ public class LongTermScheduler implements Runnable, SubmissionInterface {
         /*
         TODO fazer fica bonito na interface
          */
-        userInterface.display("[LongTermScheduler] Created Process Queue:\n"+ createdProcessQueue.toString());
+        userInterface.display("<ls> [LongTermScheduler] Created Process Queue:\n"+ createdProcessQueue.toString());
 
     }
 
@@ -76,7 +76,7 @@ public class LongTermScheduler implements Runnable, SubmissionInterface {
             }else {
                 try {
                     Thread.sleep(300);
-                }catch (InterruptedException ie){
+                } catch (InterruptedException ie){
                     System.out.println(ie.getMessage());
                 }
             }

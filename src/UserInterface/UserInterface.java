@@ -48,6 +48,7 @@ public class UserInterface implements NotificationInterface, Runnable {
         frame.add(logPanel, BorderLayout.CENTER);
 
         // Setando GUI para visualização
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH); // Full Screen
         frame.setVisible(true);
     }
 
