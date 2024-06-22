@@ -36,7 +36,7 @@ public class ShortTermScheduler implements Runnable, ControlInterface, InterSche
 
     @Override
     public void run() {
-        userInterface.display("[ShortTermScheduler] Pronto.");
+        userInterface.display("<ss> [ShortTermScheduler] Pronto.");
         while (true) {
             if(!suspended) {
                 if (!readyQueue.isEmpty()) {
@@ -50,16 +50,16 @@ public class ShortTermScheduler implements Runnable, ControlInterface, InterSche
                 try {
                     Thread.sleep(1000);
                 }catch (InterruptedException ie) {
-                    System.err.println("[ShortTermScheduler] Interrompido.");
+                    System.err.println("<ss> [ShortTermScheduler] Interrompido.");
                 }
             }
             if (readyQueue.isEmpty() && blockedQueue.isEmpty()) {
                 // Termina a simulação quando não há mais processos prontos ou bloqueados
-                userInterface.display("[ShortTermScheduler] Vazio.");
+                userInterface.display("<ss> [ShortTermScheduler] Vazio.");
                 try {
                     Thread.sleep(1000);
                 }catch (InterruptedException ie) {
-                    System.err.println("[ShortTermScheduler] Interrompido.");
+                    System.err.println("<ss> [ShortTermScheduler] Interrompido.");
                 }
             }
         }
@@ -73,7 +73,7 @@ public class ShortTermScheduler implements Runnable, ControlInterface, InterSche
                 try {
                     Thread.sleep(300);
                 }catch (InterruptedException e){
-                    System.err.println("[ShortTermScheduler] Interrupted while waiting for process to finish.");
+                    System.err.println("<ss> [ShortTermScheduler] Interrupted while waiting for process to finish.");
                 }
             }
             process.setRemainingTime(remainingTime-1);
@@ -81,7 +81,7 @@ public class ShortTermScheduler implements Runnable, ControlInterface, InterSche
             try {
                 Thread.sleep(1000);
             }catch (InterruptedException e){
-                System.err.println("[ShortTermScheduler] Interrupted while waiting for process to finish.");
+                System.err.println("<ss> [ShortTermScheduler] Interrupted while waiting for process to finish.");
             }
 
             String command = process.getNextInstruction();

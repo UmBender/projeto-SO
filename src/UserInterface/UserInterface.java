@@ -1,25 +1,25 @@
 package UserInterface;
 
-//UI Modules
+// UI Modules
 import javax.swing.*;
 
 import UserInterface.UIComponents.SubmissionPanel;
-import UserInterface.UIComponents.TextAreaPanel;
 import UserInterface.UIComponents.ControlPanel;
+import UserInterface.UIComponents.TextPanel;
 
-//Java utils
+// Java utils
 import java.awt.*;
 
 public class UserInterface implements NotificationInterface, Runnable {
     private SubmissionInterface longTermScheduler;
     private ControlInterface shortTermScheduler;
-    private TextAreaPanel textAreaPanel;
+    TextPanel instructionsLogPanel = new TextPanel("Instruções Log");
+    TextPanel shortTermSchedulerLogPanel = new TextPanel("ShortTermScheduler Log");
+    TextPanel longTermSchedulerLogPanel = new TextPanel("LongTermScheduler Log");
 
-    public UserInterface(){
-        this.textAreaPanel = new TextAreaPanel();
-    }
+    public UserInterface() {}
 
-    public void setThreads(ControlInterface shortTermScheduler, SubmissionInterface longTermScheduler){
+    public void setThreads(ControlInterface shortTermScheduler, SubmissionInterface longTermScheduler) {
         this.shortTermScheduler = shortTermScheduler;
         this.longTermScheduler = longTermScheduler;
     }
@@ -30,30 +30,46 @@ public class UserInterface implements NotificationInterface, Runnable {
         frame.setSize(800, 600);
         frame.setLayout(new BorderLayout());
 
-        // Criação de uma instância de TextArea
-        frame.getContentPane().add(textAreaPanel, BorderLayout.CENTER);
+        JPanel logPanel = new JPanel();
+        logPanel.setLayout(new GridLayout(3, 1));
+        logPanel.add(instructionsLogPanel);
+        logPanel.add(shortTermSchedulerLogPanel);
+        logPanel.add(longTermSchedulerLogPanel);
 
         // Criando painel de controle
         JPanel controlPanel = new ControlPanel(shortTermScheduler);
-        frame.getContentPane().add(controlPanel, BorderLayout.NORTH);
+        frame.add(controlPanel, BorderLayout.NORTH);
 
         // Criando painel de submissão
         JPanel submissionPanel = new SubmissionPanel(longTermScheduler);
         frame.add(submissionPanel, BorderLayout.SOUTH);
 
-        // Criando a visualização GUI
-        frame.setVisible(true);
+        // Criando paineis de logs
+        frame.add(logPanel, BorderLayout.CENTER);
 
+        // Setando GUI para visualização
+        frame.setVisible(true);
     }
 
-    public void run(){
-        SwingUtilities.invokeLater(() -> {
-            createAndShowGUI();
-        });
+    public void run() {
+        SwingUtilities.invokeLater(this::createAndShowGUI);
     }
 
     @Override
     public void display(String info) {
-        this.textAreaPanel.append(info);
+        SwingUtilities.invokeLater(() -> {
+            String[] command = info.split(" ");
+
+            switch (command[0]){
+                case "<ss>":
+                    this.shortTermSchedulerLogPanel.append(info.substring(4));
+                    break;
+                case "<ls>":
+                    this.longTermSchedulerLogPanel.append(info.substring(4));
+                    break;
+                default:
+                    this.instructionsLogPanel.append(info.substring(4));
+            }
+        });
     }
 }
