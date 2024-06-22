@@ -127,7 +127,7 @@ public class ShortTermScheduler implements Runnable, ControlInterface, InterSche
         int blockPeriod = process.getNextBlockPeriod();
         process.setBlockTime(blockPeriod);
         blockedQueue.add(process);
-        userInterface.display("[ShortTermScheduler] Process " + process.getId() + " blocked for " + process.getBlockTime() + " quanta.");
+        userInterface.display("<ss> [ShortTermScheduler] Process " + process.getId() + " blocked for " + process.getBlockTime() + " quanta.");
     }
 
     @Override

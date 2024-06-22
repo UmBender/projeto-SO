@@ -1,6 +1,5 @@
 //IO Modules
 import UserInterface.NotificationInterface;
-import UserInterface.UserInterface;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,6 +7,9 @@ import java.text.ParseException;
 import java.util.Iterator;
 import java.util.Objects;
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Supplier;
 
 //Instructions data structure
 import java.util.Vector;
@@ -28,11 +30,21 @@ public class ParserBNF {
         String program_end;
         String realFileName;
 
-        /*
-        TODO Modifique aqui se for usar windows a forma que muda o parse
-         */
-        String[] splited_path = fileName.split("/");
-        realFileName = splited_path[splited_path.length - 1];
+        // Detecção do sistema operacional
+        String os = System.getProperty("os.name").toLowerCase();
+        if (os.contains("win")){
+            realFileName = "";
+        }
+        else if (os.contains("osx")){
+            realFileName = "";
+        }
+        else if (os.contains("nix") || os.contains("aix") || os.contains("nux")){
+            String[] splited_path = fileName.split("/");
+            realFileName = splited_path[splited_path.length - 1];
+        } else {
+            realFileName = "";
+        }
+
 
         try {
             Scanner reader = new Scanner(programFile);
@@ -49,14 +61,23 @@ public class ParserBNF {
             reader.close();
             this.print();
         } catch (FileNotFoundException e) {
-            userInterface.display("[Error] Arquivo não encontrado: " + fileName);
-            throw new FileNotFoundException("[Error] Arquivo não encontrado: " + fileName);
+            userInterface.display("<is> [Parser Error] Arquivo não encontrado: " + fileName);
+            throw new FileNotFoundException("<is> [Parser Error] Arquivo não encontrado: " + fileName);
         }
 
-        if(!validateBegin(program_begin) || !validateEnd(program_end) ||
-        !validateName(realFileName, program_name) || !validateProgram()){
-            throw new ParseException("[Error] Arquivo não segue padrão de formação",0);
+        // Validações para os Programs (Definidos pela BNF)
+        List<NamedValidation> validations = new ArrayList<>();
+        validations.add(new NamedValidation("validateBegin", () -> validateBegin(program_begin)));
+        validations.add(new NamedValidation("validateEnd", () -> validateEnd(program_end)));
+        validations.add(new NamedValidation("validateName", () -> validateName(realFileName, program_name)));
+        validations.add(new NamedValidation("validateProgram", this::validateProgram));
+
+        for (NamedValidation validation : validations) {
+            if (!validation.getValidationFunction().get()) {
+                throw new ParseException("<is> [Parser Error] Arquivo não segue padrão de formação: " + validation.getName(), 0);
+            }
         }
+
         instructions.add(program_end);
         return instructions;
     }
@@ -65,10 +86,10 @@ public class ParserBNF {
         int n = instructions.size();
         Iterator<String> instructionsIterator = instructions.iterator();
 
-        userInterface.display("[Parser] Lendo as seguintes instruções:" );
+        userInterface.display("<is> [Parser] Lendo as seguintes instruções:" );
 
         for (int i = 0; i < n; i++) {
-            String output = String.format("-> (%d) %s",
+            String output = String.format("<is> -> (%d) %s",
                     i, instructionsIterator.next());
             userInterface.display(output);
         }

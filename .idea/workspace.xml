@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a72f5e36-787d-4a10-a2e9-8d5ac968a9e3" name="Changes" comment="feat: Alteracoes no ParserBNF, usar vector, Process. Adicao do dos campos no long, short e Userinterface para comounicação.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ParserBNF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ParserBNF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Process.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ShortTermScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShortTermScheduler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserInterface/UIComponents/TextAreaPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserInterface/UIComponents/TextPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UserInterface/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserInterface/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +146,7 @@
       <workItem from="1718660691011" duration="58000" />
       <workItem from="1718660752359" duration="1002000" />
       <workItem from="1718661767837" duration="15858000" />
-      <workItem from="1719081058229" duration="2655000" />
+      <workItem from="1719081058229" duration="4513000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Alteracoes no ParserBNF, usar vector, Process. Adicao do dos campos no long, short e Userinterface para comounicação.">
       <option name="closed" value="true" />
