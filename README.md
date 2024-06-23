@@ -9,6 +9,9 @@ da USP-RP, aplicada pelo professor Clever Ricardo Guareis de Farias.
 
 1) Para inicilizar o programa basta abrir um projeto java e executar a classe principal
 SchedulerSimulator ou apenas executar o arquivo SchedulerSimulator.jar.
+```bash
+java -jar SchedulerSimulator.jar
+```
 2) Com o programa aberto, você precisa indicar em "Job file" o caminho absoluto
 completo do "arquivo programa" definido pela BNF apresentada pelo professor.
 
