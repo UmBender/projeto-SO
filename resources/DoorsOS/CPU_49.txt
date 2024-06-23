@@ -1,0 +1,20 @@
+program CPU_49
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 4
+execute
+execute
+block 4
+execute
+execute
+execute
+end

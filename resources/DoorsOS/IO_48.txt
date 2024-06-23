@@ -1,0 +1,20 @@
+program IO_48
+begin
+execute
+execute
+execute
+block 5
+execute
+execute
+execute
+block 4
+block 4
+block 5
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+end

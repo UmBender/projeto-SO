@@ -1,0 +1,20 @@
+program CPU_279
+begin
+block 3
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+end

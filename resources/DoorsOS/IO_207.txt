@@ -1,0 +1,21 @@
+program IO_207
+begin
+execute
+execute
+execute
+execute
+block 3
+execute
+execute
+execute
+execute
+execute
+block 1
+block 3
+block 4
+execute
+execute
+execute
+execute
+block 4
+end

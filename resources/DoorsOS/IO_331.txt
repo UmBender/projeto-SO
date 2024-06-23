@@ -1,0 +1,10 @@
+program IO_331
+begin
+execute
+execute
+execute
+execute
+execute
+block 2
+block 5
+end

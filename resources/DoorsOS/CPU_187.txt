@@ -1,0 +1,17 @@
+program CPU_187
+begin
+execute
+execute
+execute
+execute
+execute
+block 4
+block 3
+block 3
+execute
+execute
+execute
+execute
+execute
+execute
+end

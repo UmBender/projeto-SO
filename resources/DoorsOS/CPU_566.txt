@@ -1,0 +1,16 @@
+program CPU_566
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 1
+end

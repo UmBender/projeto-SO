@@ -1,0 +1,18 @@
+program CPU_734
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 2
+block 3
+execute
+execute
+execute
+execute
+end

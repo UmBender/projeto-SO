@@ -1,0 +1,13 @@
+program IO_707
+begin
+execute
+block 3
+execute
+execute
+execute
+block 3
+block 5
+block 1
+block 5
+execute
+end

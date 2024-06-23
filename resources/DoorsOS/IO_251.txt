@@ -1,0 +1,11 @@
+program IO_251
+begin
+block 3
+execute
+block 4
+block 5
+block 4
+block 2
+block 1
+block 3
+end

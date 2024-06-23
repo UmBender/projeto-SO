@@ -1,0 +1,17 @@
+program CPU_916
+begin
+block 4
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+end

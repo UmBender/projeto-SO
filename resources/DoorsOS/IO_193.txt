@@ -1,0 +1,20 @@
+program IO_193
+begin
+block 3
+execute
+execute
+execute
+execute
+execute
+block 2
+block 4
+execute
+execute
+execute
+execute
+block 5
+block 3
+execute
+execute
+execute
+end

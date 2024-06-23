@@ -1,0 +1,13 @@
+program IO_772
+begin
+block 4
+execute
+execute
+execute
+execute
+execute
+execute
+block 5
+block 1
+block 2
+end

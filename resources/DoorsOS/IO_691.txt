@@ -1,0 +1,14 @@
+program IO_691
+begin
+block 4
+block 3
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 3
+block 4
+end

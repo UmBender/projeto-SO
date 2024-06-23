@@ -1,0 +1,21 @@
+program IO_921
+begin
+block 1
+execute
+execute
+execute
+execute
+execute
+block 5
+execute
+execute
+block 3
+block 2
+execute
+execute
+execute
+execute
+block 3
+execute
+execute
+end

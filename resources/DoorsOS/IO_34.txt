@@ -1,0 +1,15 @@
+program IO_34
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 3
+execute
+block 2
+block 5
+block 4
+end

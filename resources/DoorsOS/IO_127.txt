@@ -1,0 +1,16 @@
+program IO_127
+begin
+block 4
+block 5
+execute
+execute
+execute
+block 3
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+end

@@ -1,0 +1,21 @@
+program CPU_658
+begin
+block 3
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 3
+block 2
+block 2
+block 1
+end

@@ -1,0 +1,21 @@
+program CPU_540
+begin
+block 5
+block 1
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 1
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+end

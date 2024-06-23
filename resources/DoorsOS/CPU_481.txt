@@ -1,0 +1,23 @@
+program CPU_481
+begin
+execute
+block 2
+block 3
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+end

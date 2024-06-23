@@ -1,0 +1,16 @@
+program IO_880
+begin
+block 4
+execute
+execute
+block 5
+block 4
+execute
+execute
+execute
+block 4
+block 2
+block 1
+execute
+execute
+end

@@ -1,0 +1,18 @@
+program CPU_147
+begin
+block 5
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 5
+execute
+execute
+execute
+execute
+execute
+execute
+end

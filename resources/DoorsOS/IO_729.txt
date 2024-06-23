@@ -1,0 +1,14 @@
+program IO_729
+begin
+block 5
+block 1
+block 3
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+end

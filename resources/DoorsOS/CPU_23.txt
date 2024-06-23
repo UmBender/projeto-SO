@@ -1,0 +1,12 @@
+program CPU_23
+begin
+execute
+execute
+execute
+block 3
+block 3
+execute
+execute
+execute
+execute
+end

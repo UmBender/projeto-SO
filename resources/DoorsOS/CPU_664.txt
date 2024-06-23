@@ -1,0 +1,30 @@
+program CPU_664
+begin
+block 3
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 3
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 4
+execute
+execute
+execute
+execute
+execute
+end

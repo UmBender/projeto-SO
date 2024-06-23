@@ -69,7 +69,7 @@ public class LongTermScheduler implements Runnable, SubmissionInterface {
                 }else {
                     try {
                         Thread.sleep(300);
-                    }catch (InterruptedException ie){
+                    } catch (InterruptedException ie){
                         System.out.println(ie.getMessage());
                     }
                 }

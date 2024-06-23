@@ -1,0 +1,31 @@
+program CPU_76
+begin
+block 1
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 5
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+end

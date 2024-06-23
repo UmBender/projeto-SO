@@ -1,0 +1,9 @@
+program IO_963
+begin
+block 2
+block 5
+block 5
+execute
+block 5
+block 4
+end

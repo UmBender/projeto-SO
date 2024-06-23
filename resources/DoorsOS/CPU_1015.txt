@@ -1,0 +1,12 @@
+program CPU_1015
+begin
+execute
+block 5
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+end

@@ -1,0 +1,15 @@
+program IO_693
+begin
+block 4
+block 1
+execute
+execute
+execute
+execute
+execute
+execute
+block 1
+execute
+execute
+block 5
+end

@@ -1,0 +1,8 @@
+program IO_911
+begin
+block 2
+block 2
+block 5
+block 5
+block 2
+end

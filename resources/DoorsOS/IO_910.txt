@@ -1,0 +1,21 @@
+program IO_910
+begin
+block 4
+block 3
+block 4
+block 1
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 3
+block 2
+end

@@ -1,0 +1,10 @@
+program IO_925
+begin
+block 2
+execute
+block 3
+block 3
+block 1
+block 1
+block 3
+end

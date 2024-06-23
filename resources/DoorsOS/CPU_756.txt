@@ -1,0 +1,15 @@
+program CPU_756
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 4
+execute
+execute
+block 3
+end

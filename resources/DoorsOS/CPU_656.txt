@@ -1,0 +1,29 @@
+program CPU_656
+begin
+block 4
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 5
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+end

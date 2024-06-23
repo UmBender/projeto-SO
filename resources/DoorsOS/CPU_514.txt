@@ -1,0 +1,10 @@
+program CPU_514
+begin
+execute
+execute
+execute
+block 2
+execute
+execute
+block 2
+end

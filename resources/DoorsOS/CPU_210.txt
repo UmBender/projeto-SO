@@ -1,0 +1,14 @@
+program CPU_210
+begin
+block 5
+execute
+execute
+execute
+execute
+execute
+block 2
+execute
+execute
+execute
+execute
+end

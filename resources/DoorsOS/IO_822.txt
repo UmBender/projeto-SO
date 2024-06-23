@@ -1,0 +1,13 @@
+program IO_822
+begin
+block 4
+block 4
+execute
+execute
+block 3
+execute
+execute
+execute
+execute
+execute
+end

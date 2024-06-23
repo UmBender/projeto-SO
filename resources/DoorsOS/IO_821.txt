@@ -1,0 +1,15 @@
+program IO_821
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 5
+block 2
+block 4
+execute
+execute
+end

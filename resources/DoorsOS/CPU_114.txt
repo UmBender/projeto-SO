@@ -1,0 +1,17 @@
+program CPU_114
+begin
+execute
+execute
+execute
+block 4
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+end

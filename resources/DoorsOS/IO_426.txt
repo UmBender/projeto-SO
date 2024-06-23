@@ -1,0 +1,13 @@
+program IO_426
+begin
+execute
+execute
+execute
+block 4
+execute
+execute
+block 3
+block 3
+block 1
+block 2
+end

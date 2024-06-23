@@ -1,0 +1,13 @@
+program IO_84
+begin
+block 3
+block 2
+block 3
+execute
+execute
+execute
+execute
+block 5
+execute
+execute
+end

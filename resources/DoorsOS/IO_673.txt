@@ -1,0 +1,16 @@
+program IO_673
+begin
+execute
+execute
+execute
+block 5
+execute
+block 2
+execute
+execute
+block 4
+execute
+execute
+execute
+execute
+end

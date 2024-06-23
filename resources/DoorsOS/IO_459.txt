@@ -1,0 +1,16 @@
+program IO_459
+begin
+block 1
+execute
+execute
+block 2
+execute
+block 5
+block 4
+block 1
+execute
+execute
+execute
+execute
+execute
+end

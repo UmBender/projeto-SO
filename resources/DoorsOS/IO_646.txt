@@ -1,0 +1,21 @@
+program IO_646
+begin
+execute
+execute
+block 4
+block 5
+block 4
+execute
+execute
+block 4
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+end

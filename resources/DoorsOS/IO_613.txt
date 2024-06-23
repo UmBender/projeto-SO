@@ -1,0 +1,13 @@
+program IO_613
+begin
+block 4
+execute
+execute
+execute
+block 2
+block 4
+execute
+block 4
+block 4
+block 4
+end

@@ -1,0 +1,16 @@
+program IO_836
+begin
+execute
+execute
+block 3
+block 3
+block 1
+block 5
+block 3
+execute
+execute
+execute
+execute
+execute
+execute
+end

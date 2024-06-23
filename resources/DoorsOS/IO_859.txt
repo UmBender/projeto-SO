@@ -1,0 +1,19 @@
+program IO_859
+begin
+block 4
+block 1
+execute
+execute
+execute
+execute
+execute
+block 2
+block 4
+block 2
+execute
+execute
+execute
+execute
+execute
+execute
+end

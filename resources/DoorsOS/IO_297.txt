@@ -1,0 +1,13 @@
+program IO_297
+begin
+block 5
+execute
+execute
+execute
+block 5
+execute
+block 4
+block 4
+block 3
+block 3
+end

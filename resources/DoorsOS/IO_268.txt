@@ -1,0 +1,14 @@
+program IO_268
+begin
+block 1
+execute
+execute
+execute
+execute
+execute
+block 4
+block 5
+block 5
+block 5
+block 1
+end

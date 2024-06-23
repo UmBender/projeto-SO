@@ -1,0 +1,13 @@
+program IO_617
+begin
+execute
+execute
+block 2
+block 4
+execute
+execute
+execute
+execute
+block 4
+execute
+end

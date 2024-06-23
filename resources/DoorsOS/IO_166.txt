@@ -1,0 +1,12 @@
+program IO_166
+begin
+block 4
+block 2
+execute
+execute
+execute
+execute
+execute
+block 4
+block 1
+end

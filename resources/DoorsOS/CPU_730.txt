@@ -1,0 +1,18 @@
+program CPU_730
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 4
+block 1
+execute
+end

@@ -1,0 +1,21 @@
+program CPU_980
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 2
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+end

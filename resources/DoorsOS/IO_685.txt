@@ -1,0 +1,15 @@
+program IO_685
+begin
+block 3
+block 1
+execute
+execute
+execute
+execute
+execute
+block 3
+execute
+execute
+execute
+block 1
+end

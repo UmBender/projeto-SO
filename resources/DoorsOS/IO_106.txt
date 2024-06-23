@@ -1,0 +1,11 @@
+program IO_106
+begin
+execute
+block 3
+execute
+execute
+block 2
+block 1
+execute
+execute
+end

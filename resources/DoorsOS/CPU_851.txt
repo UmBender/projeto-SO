@@ -1,0 +1,14 @@
+program CPU_851
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 4
+block 2
+end

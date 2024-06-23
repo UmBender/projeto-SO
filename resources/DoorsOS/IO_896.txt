@@ -1,0 +1,11 @@
+program IO_896
+begin
+block 1
+block 2
+block 5
+execute
+execute
+execute
+execute
+execute
+end

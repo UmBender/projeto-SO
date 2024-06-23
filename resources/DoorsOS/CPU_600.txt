@@ -1,0 +1,14 @@
+program CPU_600
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 1
+end

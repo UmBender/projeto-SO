@@ -1,0 +1,14 @@
+program CPU_690
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+end

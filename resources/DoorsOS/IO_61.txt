@@ -1,0 +1,13 @@
+program IO_61
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 4
+block 2
+block 5
+end

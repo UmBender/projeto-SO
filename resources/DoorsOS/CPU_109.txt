@@ -1,0 +1,20 @@
+program CPU_109
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 5
+block 5
+execute
+execute
+execute
+execute
+execute
+end

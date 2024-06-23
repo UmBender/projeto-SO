@@ -1,0 +1,14 @@
+program IO_467
+begin
+block 1
+block 5
+block 3
+execute
+execute
+execute
+execute
+block 5
+execute
+execute
+execute
+end

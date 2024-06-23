@@ -1,0 +1,9 @@
+program IO_1000
+begin
+execute
+execute
+block 4
+block 3
+block 4
+block 1
+end

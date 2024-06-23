@@ -1,0 +1,18 @@
+program IO_118
+begin
+block 1
+block 5
+block 5
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 4
+block 2
+block 4
+block 4
+end

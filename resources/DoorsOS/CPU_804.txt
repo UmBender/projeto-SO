@@ -1,0 +1,30 @@
+program CPU_804
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 3
+block 4
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+end

@@ -1,0 +1,19 @@
+program CPU_585
+begin
+block 4
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 2
+execute
+execute
+execute
+execute
+execute
+end

@@ -1,0 +1,12 @@
+program CPU_604
+begin
+execute
+block 3
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+end

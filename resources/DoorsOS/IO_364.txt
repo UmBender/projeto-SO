@@ -1,0 +1,11 @@
+program IO_364
+begin
+execute
+execute
+execute
+execute
+block 3
+block 3
+execute
+block 3
+end

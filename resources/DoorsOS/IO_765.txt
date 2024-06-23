@@ -1,0 +1,8 @@
+program IO_765
+begin
+block 5
+block 2
+block 3
+execute
+block 2
+end

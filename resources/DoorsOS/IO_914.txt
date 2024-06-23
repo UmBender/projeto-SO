@@ -1,0 +1,15 @@
+program IO_914
+begin
+block 2
+execute
+execute
+execute
+execute
+block 2
+execute
+block 3
+block 3
+execute
+execute
+execute
+end

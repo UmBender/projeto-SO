@@ -1,0 +1,20 @@
+program CPU_352
+begin
+block 4
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 2
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 3
+end

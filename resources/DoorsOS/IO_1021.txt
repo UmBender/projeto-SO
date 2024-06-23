@@ -1,0 +1,13 @@
+program IO_1021
+begin
+block 2
+execute
+block 5
+block 5
+block 5
+execute
+execute
+execute
+execute
+execute
+end

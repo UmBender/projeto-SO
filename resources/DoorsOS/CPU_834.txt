@@ -1,0 +1,18 @@
+program CPU_834
+begin
+block 2
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 4
+block 1
+end

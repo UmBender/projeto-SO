@@ -1,0 +1,23 @@
+program CPU_545
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 1
+execute
+execute
+execute
+execute
+end

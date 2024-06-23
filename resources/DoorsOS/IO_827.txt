@@ -1,0 +1,13 @@
+program IO_827
+begin
+execute
+block 2
+execute
+execute
+execute
+execute
+execute
+execute
+block 5
+block 3
+end

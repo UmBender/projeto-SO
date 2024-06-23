@@ -1,0 +1,8 @@
+program IO_586
+begin
+block 1
+block 5
+block 3
+block 1
+execute
+end

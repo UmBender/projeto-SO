@@ -1,0 +1,25 @@
+program CPU_988
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 1
+block 2
+execute
+execute
+execute
+execute
+execute
+block 4
+end

@@ -1,0 +1,14 @@
+program IO_470
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 1
+block 5
+block 2
+end

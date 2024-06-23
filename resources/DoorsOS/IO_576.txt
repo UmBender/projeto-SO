@@ -1,0 +1,17 @@
+program IO_576
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 5
+execute
+block 2
+block 4
+block 5
+block 5
+block 2
+end

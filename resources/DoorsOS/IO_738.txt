@@ -1,0 +1,10 @@
+program IO_738
+begin
+block 1
+execute
+block 5
+execute
+execute
+execute
+block 1
+end

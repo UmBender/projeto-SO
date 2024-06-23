@@ -1,0 +1,9 @@
+program IO_245
+begin
+block 5
+block 4
+execute
+execute
+block 5
+execute
+end

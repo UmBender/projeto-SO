@@ -1,0 +1,22 @@
+program CPU_541
+begin
+block 4
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 3
+block 4
+end

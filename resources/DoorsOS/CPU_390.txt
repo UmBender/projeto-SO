@@ -1,0 +1,15 @@
+program CPU_390
+begin
+block 4
+execute
+execute
+execute
+block 1
+block 3
+execute
+execute
+execute
+execute
+execute
+execute
+end

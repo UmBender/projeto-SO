@@ -1,0 +1,13 @@
+program IO_1011
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+block 5
+block 3
+block 5
+block 1
+end

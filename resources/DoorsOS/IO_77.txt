@@ -1,0 +1,15 @@
+program IO_77
+begin
+block 4
+execute
+execute
+block 2
+block 5
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+end

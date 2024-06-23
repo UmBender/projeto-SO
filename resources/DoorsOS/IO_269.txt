@@ -1,0 +1,16 @@
+program IO_269
+begin
+execute
+execute
+execute
+execute
+execute
+block 1
+block 4
+execute
+execute
+execute
+block 5
+block 4
+block 3
+end

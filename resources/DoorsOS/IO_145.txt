@@ -1,0 +1,22 @@
+program IO_145
+begin
+execute
+execute
+execute
+execute
+block 5
+block 4
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 3
+execute
+execute
+block 4
+end

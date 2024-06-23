@@ -1,0 +1,13 @@
+program IO_527
+begin
+execute
+execute
+execute
+execute
+block 5
+block 5
+execute
+execute
+block 1
+block 3
+end

@@ -1,0 +1,17 @@
+program IO_530
+begin
+execute
+execute
+block 3
+block 1
+block 3
+execute
+execute
+block 4
+block 4
+execute
+execute
+execute
+execute
+block 3
+end

@@ -1,0 +1,20 @@
+program IO_873
+begin
+execute
+execute
+block 4
+execute
+execute
+execute
+execute
+block 5
+execute
+execute
+block 4
+block 1
+execute
+execute
+execute
+execute
+execute
+end

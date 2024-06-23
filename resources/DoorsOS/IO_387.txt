@@ -1,0 +1,13 @@
+program IO_387
+begin
+execute
+execute
+block 3
+block 3
+block 5
+execute
+execute
+block 2
+execute
+execute
+end

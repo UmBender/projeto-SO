@@ -1,0 +1,12 @@
+program IO_966
+begin
+block 3
+block 4
+execute
+execute
+block 3
+execute
+block 2
+block 3
+block 4
+end

@@ -1,0 +1,11 @@
+program IO_329
+begin
+execute
+execute
+execute
+execute
+execute
+block 4
+block 4
+block 1
+end

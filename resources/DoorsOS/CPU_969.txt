@@ -1,0 +1,19 @@
+program CPU_969
+begin
+block 2
+block 1
+execute
+execute
+execute
+execute
+execute
+block 1
+execute
+execute
+block 5
+execute
+execute
+execute
+execute
+execute
+end

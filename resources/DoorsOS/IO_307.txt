@@ -1,0 +1,11 @@
+program IO_307
+begin
+block 4
+execute
+execute
+block 2
+block 2
+block 3
+block 3
+block 1
+end

@@ -1,0 +1,18 @@
+program IO_574
+begin
+block 3
+block 2
+block 1
+execute
+execute
+execute
+execute
+execute
+execute
+block 2
+block 4
+execute
+execute
+execute
+block 5
+end

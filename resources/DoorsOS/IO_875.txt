@@ -1,0 +1,19 @@
+program IO_875
+begin
+block 2
+block 1
+execute
+execute
+execute
+execute
+execute
+block 3
+block 5
+execute
+execute
+execute
+block 1
+execute
+execute
+block 4
+end

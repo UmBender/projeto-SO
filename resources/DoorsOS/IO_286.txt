@@ -1,0 +1,10 @@
+program IO_286
+begin
+block 2
+execute
+execute
+block 2
+block 2
+block 5
+execute
+end

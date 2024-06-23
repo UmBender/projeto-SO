@@ -1,0 +1,23 @@
+program CPU_744
+begin
+block 4
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 5
+block 1
+execute
+block 1
+block 1
+end

@@ -1,0 +1,14 @@
+program IO_460
+begin
+execute
+block 2
+block 5
+execute
+execute
+execute
+block 4
+execute
+execute
+execute
+block 2
+end

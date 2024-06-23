@@ -1,0 +1,17 @@
+program CPU_506
+begin
+block 5
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+end

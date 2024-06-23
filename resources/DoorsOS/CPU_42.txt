@@ -1,0 +1,11 @@
+program CPU_42
+begin
+execute
+block 4
+execute
+execute
+execute
+execute
+execute
+execute
+end

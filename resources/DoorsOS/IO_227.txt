@@ -1,0 +1,12 @@
+program IO_227
+begin
+block 4
+block 2
+block 2
+block 1
+execute
+execute
+execute
+execute
+execute
+end

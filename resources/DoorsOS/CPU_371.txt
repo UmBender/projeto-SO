@@ -1,0 +1,14 @@
+program CPU_371
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 5
+end

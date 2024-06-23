@@ -1,0 +1,10 @@
+program IO_944
+begin
+block 3
+execute
+execute
+execute
+execute
+block 2
+block 4
+end

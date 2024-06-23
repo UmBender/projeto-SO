@@ -1,0 +1,14 @@
+program IO_682
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 4
+block 5
+block 1
+block 2
+end

@@ -1,0 +1,12 @@
+program IO_200
+begin
+block 2
+execute
+block 3
+execute
+execute
+execute
+execute
+execute
+block 4
+end

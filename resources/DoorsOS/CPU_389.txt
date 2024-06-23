@@ -1,0 +1,18 @@
+program CPU_389
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 1
+execute
+execute
+execute
+end

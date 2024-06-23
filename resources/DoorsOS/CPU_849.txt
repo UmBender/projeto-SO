@@ -1,0 +1,19 @@
+program CPU_849
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 2
+block 1
+execute
+execute
+execute
+execute
+execute
+block 4
+end

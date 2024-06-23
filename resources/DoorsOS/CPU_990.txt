@@ -1,0 +1,18 @@
+program CPU_990
+begin
+execute
+execute
+execute
+execute
+execute
+block 2
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 3
+end

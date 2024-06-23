@@ -1,0 +1,12 @@
+program IO_669
+begin
+execute
+execute
+execute
+execute
+execute
+block 5
+block 4
+block 4
+execute
+end

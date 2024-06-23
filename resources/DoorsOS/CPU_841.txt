@@ -1,0 +1,24 @@
+program CPU_841
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 1
+block 3
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+end

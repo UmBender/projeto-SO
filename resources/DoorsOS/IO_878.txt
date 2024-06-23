@@ -1,0 +1,12 @@
+program IO_878
+begin
+block 3
+block 4
+execute
+execute
+execute
+execute
+execute
+block 2
+block 4
+end

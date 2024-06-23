@@ -1,0 +1,17 @@
+program IO_758
+begin
+block 4
+block 3
+execute
+execute
+block 4
+block 4
+block 4
+execute
+execute
+execute
+execute
+execute
+execute
+block 2
+end

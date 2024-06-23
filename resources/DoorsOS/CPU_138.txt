@@ -1,0 +1,24 @@
+program CPU_138
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 2
+execute
+execute
+block 4
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+end

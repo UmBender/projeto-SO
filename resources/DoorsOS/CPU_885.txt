@@ -1,0 +1,17 @@
+program CPU_885
+begin
+execute
+execute
+execute
+block 2
+block 1
+execute
+execute
+execute
+execute
+execute
+block 3
+execute
+execute
+execute
+end

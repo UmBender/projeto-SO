@@ -1,0 +1,16 @@
+program CPU_828
+begin
+block 4
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 4
+end

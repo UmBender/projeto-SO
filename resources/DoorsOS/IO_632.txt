@@ -1,0 +1,10 @@
+program IO_632
+begin
+block 2
+execute
+execute
+block 1
+block 3
+execute
+block 2
+end

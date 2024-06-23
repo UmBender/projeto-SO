@@ -1,0 +1,12 @@
+program CPU_819
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 4
+execute
+end

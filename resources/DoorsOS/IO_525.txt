@@ -1,0 +1,19 @@
+program IO_525
+begin
+block 1
+execute
+execute
+execute
+block 5
+block 4
+execute
+execute
+execute
+execute
+block 5
+block 2
+execute
+execute
+execute
+block 5
+end

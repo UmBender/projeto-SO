@@ -1,0 +1,14 @@
+program CPU_908
+begin
+execute
+execute
+execute
+block 1
+block 5
+execute
+execute
+execute
+execute
+execute
+execute
+end

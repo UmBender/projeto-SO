@@ -1,0 +1,19 @@
+program IO_524
+begin
+block 4
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 3
+execute
+execute
+execute
+execute
+block 1
+block 5
+block 3
+end

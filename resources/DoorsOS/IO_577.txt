@@ -1,0 +1,15 @@
+program IO_577
+begin
+block 2
+execute
+execute
+execute
+execute
+block 4
+execute
+execute
+execute
+execute
+block 3
+block 5
+end

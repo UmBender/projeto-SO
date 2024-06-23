@@ -1,0 +1,10 @@
+program IO_236
+begin
+execute
+execute
+block 3
+execute
+execute
+execute
+block 3
+end

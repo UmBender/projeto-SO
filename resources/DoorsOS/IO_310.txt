@@ -1,0 +1,12 @@
+program IO_310
+begin
+execute
+execute
+execute
+block 3
+block 2
+block 4
+execute
+execute
+block 1
+end

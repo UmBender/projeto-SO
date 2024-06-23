@@ -1,0 +1,13 @@
+program IO_122
+begin
+execute
+execute
+execute
+block 1
+block 3
+execute
+execute
+execute
+block 5
+block 2
+end

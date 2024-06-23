@@ -1,0 +1,11 @@
+program IO_144
+begin
+execute
+block 5
+execute
+execute
+execute
+execute
+block 5
+block 3
+end

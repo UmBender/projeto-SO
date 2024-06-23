@@ -1,0 +1,14 @@
+program CPU_802
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 1
+end

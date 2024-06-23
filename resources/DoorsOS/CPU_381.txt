@@ -1,0 +1,20 @@
+program CPU_381
+begin
+block 1
+execute
+block 2
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 3
+execute
+execute
+execute
+execute
+execute
+end

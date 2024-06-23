@@ -1,0 +1,19 @@
+program CPU_330
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 2
+block 1
+end

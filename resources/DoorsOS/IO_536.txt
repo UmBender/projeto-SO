@@ -1,0 +1,9 @@
+program IO_536
+begin
+execute
+execute
+execute
+block 4
+block 1
+block 1
+end

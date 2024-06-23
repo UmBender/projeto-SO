@@ -1,0 +1,12 @@
+program IO_876
+begin
+execute
+execute
+execute
+execute
+block 3
+execute
+block 4
+block 5
+execute
+end

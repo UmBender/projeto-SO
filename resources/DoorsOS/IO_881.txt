@@ -1,0 +1,9 @@
+program IO_881
+begin
+block 4
+block 2
+block 4
+block 2
+execute
+execute
+end

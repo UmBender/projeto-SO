@@ -1,0 +1,16 @@
+program IO_904
+begin
+block 2
+block 4
+block 3
+block 4
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+end

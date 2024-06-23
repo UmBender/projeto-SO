@@ -1,0 +1,13 @@
+program CPU_196
+begin
+execute
+execute
+execute
+execute
+block 2
+execute
+block 1
+execute
+execute
+block 1
+end

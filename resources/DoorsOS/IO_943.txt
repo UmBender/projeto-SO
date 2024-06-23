@@ -1,0 +1,14 @@
+program IO_943
+begin
+execute
+execute
+execute
+execute
+execute
+block 4
+block 3
+block 1
+execute
+block 2
+block 1
+end

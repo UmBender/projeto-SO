@@ -1,0 +1,22 @@
+program CPU_852
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 2
+block 3
+execute
+execute
+execute
+execute
+execute
+block 2
+execute
+execute
+end

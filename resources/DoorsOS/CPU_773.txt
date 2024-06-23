@@ -1,0 +1,26 @@
+program CPU_773
+begin
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 4
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 2
+end

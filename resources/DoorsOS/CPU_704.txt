@@ -1,0 +1,21 @@
+program CPU_704
+begin
+execute
+block 4
+execute
+execute
+execute
+block 1
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+execute
+block 1
+block 1
+execute
+execute
+end
