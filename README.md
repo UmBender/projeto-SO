@@ -27,6 +27,21 @@ completo do "arquivo programa" definido pela BNF apresentada pelo professor.
 3) Após indicar o caminho em "Job file", deve-se usar os botões para manipular
 a execução do programa.
 
+### Instruções para gerador
+Instruções para o gerador
+
+Para executar nosso gerador de programas aleatórios, 
+é necessário ter o Python 3 instalado. 
+A execução é simples: é necessário passar três parâmetros. 
+Primeiro, o número de instruções por programa; 
+segundo, o número de programas gerados; 
+e, por último, o nome da pasta que irá guardar os arquivos. 
+A pasta será criada na mesma pasta em que o script for executado.
+
+```bash
+    python3 generator.py n_instrucoes n_arquivos nome_pasta
+```
+
 ### Autores
 - Caio Uehara Martins (13672022) 
 - Gustavo Bender (13725695)
