@@ -47,7 +47,7 @@ public class LongTermScheduler implements Runnable, SubmissionInterface {
 
     @Override
     public void displaySubmissionQueue() {
-        userInterface.display("<ls> <2> [LongTermScheduler] Created Process Queue: \n"+ createdProcessQueue.toString());
+        userInterface.display("<ls> <3> [LongTermScheduler] Created Process Queue: \n"+ createdProcessQueue.toString());
     }
 
     @Override

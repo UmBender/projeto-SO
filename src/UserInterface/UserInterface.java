@@ -65,7 +65,7 @@ public class UserInterface implements NotificationInterface, Runnable {
     private void createColorHashMap() {
         colorMap.put("<1>", Color.BLACK);
         colorMap.put("<2>", Color.RED);
-        colorMap.put("<3>", Color.GREEN);
+        colorMap.put("<3>", Color.BLUE);
     }
 
     @Override
