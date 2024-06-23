@@ -12,9 +12,11 @@ public class LongTermScheduler implements Runnable, SubmissionInterface {
     private InterSchedulerInterface shortTermScheduler;
     private ConcurrentLinkedQueue<Process> createdProcessQueue;
     final private int quantum;
+    final private int short_term_scheduler_load;
 
-    public LongTermScheduler(int quantum) {
+    public LongTermScheduler(int quantum, int short_term_scheduler_load) {
         createdProcessQueue = new ConcurrentLinkedQueue<Process>();
+        this.short_term_scheduler_load = short_term_scheduler_load;
         this.quantum = quantum;
     }
 
@@ -53,7 +55,7 @@ public class LongTermScheduler implements Runnable, SubmissionInterface {
     @Override
     public void run() {
         while(true) {
-            if(shortTermScheduler.getProcessLoad() < 4) {
+            if(shortTermScheduler.getProcessLoad() < short_term_scheduler_load) {
                 Process p = createdProcessQueue.poll();
                 if (p != null) {
                     shortTermScheduler.addProcess(p);
