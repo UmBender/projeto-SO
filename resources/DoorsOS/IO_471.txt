@@ -1,9 +1,0 @@
-program IO_471
-begin
-block 1
-execute
-execute
-block 2
-block 2
-execute
-end

@@ -1,9 +1,0 @@
-program IO_157
-begin
-block 4
-block 4
-block 2
-execute
-execute
-block 5
-end

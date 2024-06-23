@@ -1,9 +1,0 @@
-program IO_79
-begin
-block 1
-block 1
-execute
-execute
-block 3
-execute
-end

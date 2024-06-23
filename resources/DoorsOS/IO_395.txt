@@ -1,9 +1,0 @@
-program IO_395
-begin
-block 4
-execute
-execute
-block 1
-block 1
-execute
-end

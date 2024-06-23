@@ -1,9 +1,0 @@
-program IO_835
-begin
-block 4
-block 2
-block 4
-block 2
-execute
-block 4
-end

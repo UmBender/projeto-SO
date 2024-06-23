@@ -1,9 +1,0 @@
-program IO_36
-begin
-block 5
-execute
-execute
-block 5
-block 2
-block 1
-end

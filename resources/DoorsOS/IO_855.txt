@@ -1,8 +1,0 @@
-program IO_855
-begin
-block 5
-block 1
-block 4
-execute
-block 1
-end

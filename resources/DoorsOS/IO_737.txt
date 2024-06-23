@@ -1,8 +1,0 @@
-program IO_737
-begin
-execute
-block 5
-block 5
-block 4
-block 2
-end

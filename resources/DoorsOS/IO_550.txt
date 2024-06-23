@@ -1,9 +1,0 @@
-program IO_550
-begin
-execute
-execute
-block 3
-block 2
-block 4
-block 1
-end

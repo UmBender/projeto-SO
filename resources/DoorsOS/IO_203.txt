@@ -1,9 +1,0 @@
-program IO_203
-begin
-execute
-execute
-block 3
-block 3
-block 2
-block 1
-end

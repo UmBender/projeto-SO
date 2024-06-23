@@ -1,8 +1,0 @@
-program IO_900
-begin
-block 5
-execute
-block 5
-block 5
-block 1
-end

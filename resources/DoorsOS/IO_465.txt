@@ -1,9 +1,0 @@
-program IO_465
-begin
-block 2
-block 2
-block 3
-block 5
-block 4
-execute
-end

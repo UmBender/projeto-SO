@@ -1,8 +1,0 @@
-program IO_510
-begin
-block 3
-block 5
-block 2
-execute
-block 3
-end
