@@ -42,6 +42,10 @@ A pasta será criada na mesma pasta em que o script for executado.
     python3 generator.py n_instrucoes n_arquivos nome_pasta
 ```
 
+Já adicionamos 15 arquivos testes na pasta `resources/arquivos_para_teste`.
+Lembrando que o nome do arquivo não deve ser modificado, já que há um teste para verificar
+se o nome real do arquivo é o mesmo especificado no programa.
+
 ### Autores
 - Caio Uehara Martins (13672022) 
 - Gustavo Bender (13725695)

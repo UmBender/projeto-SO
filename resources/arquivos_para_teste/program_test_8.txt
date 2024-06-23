@@ -1,0 +1,13 @@
+program program_test_8.txt
+begin
+execute
+block 2
+block 2
+block 1
+block 3
+execute
+block 2
+block 1
+execute
+execute
+end
