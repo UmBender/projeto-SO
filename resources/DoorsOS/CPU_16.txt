@@ -1,4 +1,4 @@
-program CPU_16
+program CPU_16.txt
 begin
 block 5
 block 1
