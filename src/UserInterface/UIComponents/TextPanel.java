@@ -2,42 +2,61 @@ package UserInterface.UIComponents;
 
 import javax.swing.*;
 import javax.swing.border.Border;
-import javax.swing.text.DefaultCaret;
+import javax.swing.text.*;
+import java.awt.*;
 
 public class TextPanel extends JScrollPane {
-    private JTextArea textArea;
+    private JTextPane textPane;
     private static final String newline = "\n";
+    private Style style;
 
     public TextPanel(String title) {
         // Criando os componentes
-        textArea = new JTextArea(5, 20);
-        textArea.setEditable(false);
+        textPane = new JTextPane();
+        textPane.setEditable(false);
 
-        // Adicioando Título
+        // Adicionando Título
         Border border = BorderFactory.createTitledBorder(title);
         this.setBorder(border);
 
-        // Previne que o Scroll fique automáticamente acompanhando a linha adicionada
-        DefaultCaret caret = (DefaultCaret) textArea.getCaret();
+        // Previne que o Scroll fique automaticamente acompanhando a linha adicionada
+        DefaultCaret caret = (DefaultCaret) textPane.getCaret();
         caret.setUpdatePolicy(DefaultCaret.NEVER_UPDATE);
 
+        // Adicionando estilos
+        style = textPane.addStyle("Style", null);
+        StyleConstants.setForeground(style, Color.BLACK);
+        StyleConstants.setFontFamily(style, "Serif");
+        StyleConstants.setFontSize(style, 12);
+
         // Configurando para o texto ser usado na visualização
-        setViewportView(textArea);
+        setViewportView(textPane);
     }
 
     // Método para anexar os logs
-    public void append(String text) {
+    public void append(String text, Color color) {
         SwingUtilities.invokeLater(() -> {
-            JScrollBar verticalScrollBar = getVerticalScrollBar();
-            boolean wasAtBottom = isAtBottom(verticalScrollBar);
+            // Obtém o documento
+            StyledDocument doc = textPane.getStyledDocument();
 
-            textArea.append(text + newline);
+            // Adiciona texto ao painel
+            try {
+                JScrollBar verticalScrollBar = getVerticalScrollBar();
+                boolean wasAtBottom = isAtBottom(verticalScrollBar);
 
-            // Adiciona o comportamento de scroll automático, caso esteja na última linha
-            if (wasAtBottom) {
-                textArea.setCaretPosition(textArea.getDocument().getLength());
-            } else {
-                verticalScrollBar.setValue(verticalScrollBar.getValue());
+                // Insere o texto com o estilo
+                StyleConstants.setForeground(style, color);
+                doc.insertString(doc.getLength(), text + newline, style);
+
+                // Adiciona o comportamento de scroll automático, caso esteja na última linha
+                if (wasAtBottom) {
+                    textPane.setCaretPosition(textPane.getDocument().getLength());
+                } else {
+                    verticalScrollBar.setValue(verticalScrollBar.getValue());
+                }
+
+            } catch (BadLocationException e) {
+                e.printStackTrace();
             }
         });
     }

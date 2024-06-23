@@ -9,13 +9,15 @@ import UserInterface.UIComponents.TextPanel;
 
 // Java utils
 import java.awt.*;
+import java.util.HashMap;
 
 public class UserInterface implements NotificationInterface, Runnable {
     private SubmissionInterface longTermScheduler;
     private ControlInterface shortTermScheduler;
-    TextPanel instructionsLogPanel = new TextPanel("Instruções Log");
+    TextPanel parserLogPanel = new TextPanel("Parser Log");
     TextPanel shortTermSchedulerLogPanel = new TextPanel("ShortTermScheduler Log");
     TextPanel longTermSchedulerLogPanel = new TextPanel("LongTermScheduler Log");
+    HashMap<String, Color> colorMap = new HashMap<>();
 
     public UserInterface() {}
 
@@ -25,14 +27,16 @@ public class UserInterface implements NotificationInterface, Runnable {
     }
 
     public void createAndShowGUI() {
+        // Criando Frame
         JFrame frame = new JFrame("Scheduler Simulator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(800, 600);
         frame.setLayout(new BorderLayout());
 
+        // Adicionando paineis de Log
         JPanel logPanel = new JPanel();
         logPanel.setLayout(new GridLayout(3, 1));
-        logPanel.add(instructionsLogPanel);
+        logPanel.add(parserLogPanel);
         logPanel.add(shortTermSchedulerLogPanel);
         logPanel.add(longTermSchedulerLogPanel);
 
@@ -50,10 +54,17 @@ public class UserInterface implements NotificationInterface, Runnable {
         // Setando GUI para visualização
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH); // Full Screen
         frame.setVisible(true);
+
+        this.createColorHashMap();
     }
 
     public void run() {
         SwingUtilities.invokeLater(this::createAndShowGUI);
+    }
+
+    private void createColorHashMap() {
+        colorMap.put("<1>", Color.BLACK);
+        colorMap.put("<2>", Color.RED);
     }
 
     @Override
@@ -61,15 +72,17 @@ public class UserInterface implements NotificationInterface, Runnable {
         SwingUtilities.invokeLater(() -> {
             String[] command = info.split(" ");
 
+            // Parseamento das instruções para cada painel e cor
             switch (command[0]){
                 case "<ss>":
-                    this.shortTermSchedulerLogPanel.append(info.substring(4));
+                    this.shortTermSchedulerLogPanel.append(info.substring(8), colorMap.get(command[1]));
                     break;
                 case "<ls>":
-                    this.longTermSchedulerLogPanel.append(info.substring(4));
+                    this.longTermSchedulerLogPanel.append(info.substring(8), colorMap.get(command[1]));
                     break;
-                default:
-                    this.instructionsLogPanel.append(info.substring(4));
+                case "<is>":
+                    this.parserLogPanel.append(info.substring(8), colorMap.get(command[1]));
+                    break;
             }
         });
     }

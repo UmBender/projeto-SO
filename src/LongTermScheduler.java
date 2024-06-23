@@ -21,8 +21,7 @@ public class LongTermScheduler implements Runnable, SubmissionInterface {
     public void setThreads(NotificationInterface userInterface, InterSchedulerInterface shortTermScheduler) {
         this.userInterface = userInterface;
         this.shortTermScheduler = shortTermScheduler;
-
-        userInterface.display("<ls> [LongTerm Scheduler] Pronto.");
+        userInterface.display("<ls> <2> [LongTerm Scheduler] Pronto.");
     }
 
     @Override
@@ -48,19 +47,11 @@ public class LongTermScheduler implements Runnable, SubmissionInterface {
 
     @Override
     public void displaySubmissionQueue() {
-        /*
-        TODO fazer fica bonito na interface
-         */
-        userInterface.display("<ls> [LongTermScheduler] Created Process Queue:\n"+ createdProcessQueue.toString());
-
+        userInterface.display("<ls> <2> [LongTermScheduler] Created Process Queue: \n"+ createdProcessQueue.toString());
     }
 
     @Override
     public void run() {
-        /*
-        TODO Aqui tem que checkar a carga do ShortTermScheduler para ver se ele ta com muitos processos CPU
-        ou se pode mandar mais alguns pois ta com pouca carga ou muito IO bound
-         */
         while(true) {
             if(shortTermScheduler.getProcessLoad() < 10) {
                 Process p = createdProcessQueue.poll();

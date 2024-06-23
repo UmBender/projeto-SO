@@ -46,8 +46,8 @@ public class ParserBNF {
             reader.close();
             this.print();
         } catch (FileNotFoundException e) {
-            userInterface.display("<is> [Parser Error] Arquivo não encontrado: " + fileName);
-            throw new FileNotFoundException("<is> [Parser Error] Arquivo não encontrado: " + fileName);
+            userInterface.display("<is> <2> [Parser Error] Arquivo não encontrado: " + fileName);
+            throw new FileNotFoundException("<is> <2> [Parser Error] Arquivo não encontrado: " + fileName);
         }
 
         // Validações para os Programs (Definidos pela BNF)
@@ -59,7 +59,7 @@ public class ParserBNF {
 
         for (NamedValidation validation : validations) {
             if (!validation.getValidationFunction().get()) {
-                throw new ParseException("<is> [Parser Error] Arquivo não segue padrão de formação: " + validation.getName(), 0);
+                throw new ParseException("<is> <2> [Parser Error] Arquivo não segue padrão de formação: " + validation.getName(), 0);
             }
         }
 
@@ -71,19 +71,21 @@ public class ParserBNF {
         int n = instructions.size();
         Iterator<String> instructionsIterator = instructions.iterator();
 
-        userInterface.display("<is> [Parser] Lendo as seguintes instruções:" );
+        userInterface.display(String.format("<is> <1> [Parser] Lendo as instruções de %s", program_name));
 
         for (int i = 0; i < n; i++) {
-            String output = String.format("<is> -> (%d) %s",
+            String output = String.format("<is> <1> -> (%d) %s",
                     i, instructionsIterator.next());
             userInterface.display(output);
         }
+
+        userInterface.display(String.format("<is> <2> [Parser] Instruções de %s carregadas", program_name ));
     }
 
     private void detectOS(String fileName){
         // Detecção do sistema operacional
         String os = System.getProperty("os.name").toLowerCase();
-        userInterface.display("<is> [Parser] Detecção de OS: " + os);
+        userInterface.display("<is> <1> [Parser] Detecção de OS: " + os);
 
         if (os.contains("win")) {
             String[] splitedPath = fileName.split("\\\\");
@@ -95,7 +97,7 @@ public class ParserBNF {
             realFileName = splitedPath[splitedPath.length - 1];
         } else {
             realFileName = "";
-            userInterface.display("<is> [Parser Error] Sistema operacional não suportado: " + os);
+            userInterface.display("<is> <1> [Parser Error] Sistema operacional não suportado: " + os);
         }
 
     }

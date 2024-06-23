@@ -75,13 +75,12 @@ public class Process {
         String pid = this.getId();
 
         assert instruction != null;
-        userInterface.display(String.format("<is> [Process (%s)] %s", pid, instruction));
         return getCommand(instruction);
     }
 
     @Override
     public String toString(){
-        return "\nPid: " +pid + "\nRemainingTime: " + remainingTime + "\nBlockTime: " + blockTime + "\n";
+        return "<is> <1> \nPid: " +pid + "\nRemainingTime: " + remainingTime + "\nBlockTime: " + blockTime + "\n";
 
     }
 
