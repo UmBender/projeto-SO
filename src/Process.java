@@ -12,7 +12,7 @@ public class Process {
     private final Vector<String> instructions;
     private int blockPeriod;
     private int instruction_number;
-    private NotificationInterface userInterface;
+    final private NotificationInterface userInterface;
 
     public Process(String pid, int quantum, Vector<String> instructions, NotificationInterface userInterface) {
         this.quantum = quantum;
@@ -80,21 +80,26 @@ public class Process {
 
     @Override
     public String toString(){
-        return "<is> <1> \nPid: " +pid + "\nRemainingTime: " + remainingTime + "\nBlockTime: " + blockTime + "\n";
+        return "\nPid: " +pid + "\nRemainingTime: " + remainingTime + "\nBlockTime: " + blockTime + "\n";
 
     }
 
     public void resetRemaningTime() {
-        this.remainingTime = this.number_quantum * this.quantum;;
+        if(number_quantum >=4 ){
+
+            this.remainingTime = this.quantum * 4;
+        }else{
+            this.remainingTime = this.quantum;
+        }
     }
 
     public void upgradeNumberQuantum() {
-        if(number_quantum < 8) {
+        if(number_quantum < 6) {
             this.number_quantum++;
         }
     }
     public void downgradeNumberQuantum() {
-        if(number_quantum > 1) {
+        if(number_quantum > 2) {
             number_quantum--;
         }
     }
