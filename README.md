@@ -28,7 +28,6 @@ completo do "arquivo programa" definido pela BNF apresentada pelo professor.
 a execução do programa.
 
 ### Instruções para gerador
-Instruções para o gerador
 
 Para executar nosso gerador de programas aleatórios, 
 é necessário ter o Python 3 instalado. 
