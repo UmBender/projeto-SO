@@ -53,7 +53,7 @@ public class LongTermScheduler implements Runnable, SubmissionInterface {
     @Override
     public void run() {
         while(true) {
-            if(shortTermScheduler.getProcessLoad() < 10) {
+            if(shortTermScheduler.getProcessLoad() < 4) {
                 Process p = createdProcessQueue.poll();
                 if (p != null) {
                     shortTermScheduler.addProcess(p);
